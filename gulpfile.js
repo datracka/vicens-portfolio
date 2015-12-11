@@ -53,7 +53,7 @@ var sassTasks = function (filename) {
                 includePaths: ['.'],
                 errLogToConsole: !enabled.failStyleTask
             }));
-        })
+        })();
 };
 
 var cssTasks = function (filename) {
@@ -122,7 +122,7 @@ var revManifest = path.dist + 'assets.json';
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function (directory) {
-    console.log(gulp.dest, path, gulp.src);
+
     return lazypipe()
         .pipe(gulp.dest, path.dist + directory)
         .pipe(browserSync.stream, {match: '**/*.{js,css}'})
@@ -133,16 +133,36 @@ var writeToManifest = function (directory) {
         .pipe(gulp.dest, path.dist)();
 };
 
+var mycopy = function () {
+    return lazypipe()
+        .pipe(browserSync.stream, {match: '**/*.{js,css}'})
+        .pipe(gulp.dest, path.styles)();
+};
+
+
 /** tasks **/
 
-gulp.task('sass', ['wiredep'], function() {
+gulp.task('sass', ['wiredep'], function () {
     var merged = merge();
     manifest.forEachDependency('css', function (dep) {
-        var cssTasksInstance = sassTasks(dep.name);
+        var sassTasksInstance = sassTasks(dep.name);
+        if (!enabled.failStyleTask) {
+            sassTasksInstance.on('error', function (err) {
+                console.error(err.message);
+                this.emit('end');
+            });
+        }
+
+        merged.add(gulp.src(dep.globs, {base: 'styles'})
+            .pipe(sassTasksInstance));
     });
+
+    return merged
+        .pipe(mycopy());
+
 });
 
-gulp.task('styles', ['wiredep'], function() {
+gulp.task('styles', ['wiredep'], function () {
     var merged = merge();
     manifest.forEachDependency('css', function (dep) {
         var cssTasksInstance = cssTasks(dep.name);
@@ -152,8 +172,8 @@ gulp.task('styles', ['wiredep'], function() {
                 this.emit('end');
             });
         }
-       // merged.add(gulp.src(dep.globs, {base: 'styles'})
-         //   .pipe(cssTasksInstance));
+        merged.add(gulp.src(dep.globs, {base: 'styles'})
+            .pipe(cssTasksInstance));
     });
     return merged
         .pipe(writeToManifest('styles'));
@@ -189,7 +209,7 @@ gulp.task('serve', function () {
     });
     console.log(path.source);
     gulp.watch(['app/**/*.html'], reload);
-    gulp.watch([path.source + 'styles/**/*'], ['styles'], reload);
+    gulp.watch([path.source + 'styles/**/*'], ['sass'], reload);
     // gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
     // gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
     // gulp.watch([path.source + 'images/**/*'], ['images']);

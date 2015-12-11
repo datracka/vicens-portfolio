@@ -20,7 +20,8 @@
     }
   },
   "paths": {
-    "source": "app/assets/",
+    "styles": "styles/",
+    "source": "app/",
     "dist": "dist/"
   },
   "config": {
