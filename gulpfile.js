@@ -22,9 +22,12 @@ var uglify       = require('gulp-uglify');
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./app/assets/manifest.json');
 //paths to assets directories
+var globs = manifest.globs;
 var path = manifest.paths;
 var config = manifest.config || {};
 var project = manifest.getProjectGlobs();
+
+const reload = browserSync.reload;
 
 // CLI options
 var enabled = {
@@ -81,6 +84,27 @@ var cssTasks = function(filename) {
         })();
 };
 
+var jsTasks = function(filename) {
+    return lazypipe()
+        .pipe(function() {
+            return gulpif(enabled.maps, sourcemaps.init());
+        })
+        .pipe(concat, filename)
+        .pipe(uglify, {
+            compress: {
+                'drop_debugger': enabled.stripJSDebug
+            }
+        })
+        .pipe(function() {
+            return gulpif(enabled.rev, rev());
+        })
+        .pipe(function() {
+            return gulpif(enabled.maps, sourcemaps.write('.', {
+                sourceRoot: 'app/assets/scripts/'
+            }));
+        })();
+};
+
 // Path to the compiled assets manifest in the dist directory
 var revManifest = path.dist + 'assets.json';
 
@@ -130,4 +154,51 @@ gulp.task('wiredep', function() {
         }))
         .pipe(gulp.dest(path.source + 'styles'));
 });
+
+gulp.task('log', function() {
+    console.log(manifest);
+});
+
+gulp.task('clean', require('del').bind(null, [path.dist]));
+
+
+// Watch files for changes & reload
+gulp.task('serve', function() {
+    browserSync.init({
+        logPrefix: 'WSK',
+        server: 'app',
+        port: 3000
+    });
+    console.log(path.source);
+    gulp.watch(['app/**/*.html'], reload);
+    gulp.watch([path.source + 'styles/**/*'], ['styles'], reload);
+   // gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
+   // gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
+   // gulp.watch([path.source + 'images/**/*'], ['images']);
+   // gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
+});
+
+// Static Server + watching scss/html files
+gulp.task('serve2', function() {
+
+    browserSync.init({
+        server: "app"
+    });
+
+    gulp.watch("app/scss/*.scss", ['sass']);
+    gulp.watch("app/*.html").on('change', browserSync.reload);
+});
+
+gulp.task('build', function(callback) {
+    runSequence('styles',
+        'scripts',
+        ['fonts', 'images'],
+        callback);
+});
+
+
+gulp.task('default', ['clean'], function() {
+    gulp.start('build');
+});
+
 

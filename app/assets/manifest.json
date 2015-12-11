@@ -10,6 +10,9 @@
       "files": [
         "styles/main.scss"
       ],
+      "vendor": [
+        "../bower_components/material-design-lite/src/material.min.css"
+      ],
       "main": true
     },
     "jquery.js": {
@@ -17,6 +20,6 @@
     }
   },
   "config": {
-    "devUrl": "http://vicensfayos.com"
+    "devUrl": "http://vicensfayos.local"
   }
 }
