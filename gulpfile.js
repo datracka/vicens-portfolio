@@ -18,6 +18,7 @@ var runSequence = require('run-sequence');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var header = require('gulp-header');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./app/manifest.json');
@@ -46,7 +47,6 @@ var enabled = {
 var sassTasks = function (filename) {
     return lazypipe()
         .pipe(function () {
-
             return gulpif('*.scss', sass({
                 outputStyle: 'nested', // libsass doesn't support expanded yet
                 precision: 10,
@@ -228,4 +228,10 @@ gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
 
+/*TASKS
+
+ $ gulp [ --production ] for building assets /dist (staging and production)
+ $ gulp serve -> serve the development folder /app with browser sync
+
+ */
 
