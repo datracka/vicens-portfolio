@@ -1,23 +1,23 @@
-var argv         = require('minimist')(process.argv.slice(2));
+var argv = require('minimist')(process.argv.slice(2));
 var autoprefixer = require('gulp-autoprefixer');
-var browserSync  = require('browser-sync').create();
-var changed      = require('gulp-changed');
-var concat       = require('gulp-concat');
-var flatten      = require('gulp-flatten');
-var gulp         = require('gulp');
-var gulpif       = require('gulp-if');
-var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
-var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
-var merge        = require('merge-stream');
-var minifyCss    = require('gulp-minify-css');
-var plumber      = require('gulp-plumber');
-var rev          = require('gulp-rev');
-var runSequence  = require('run-sequence');
-var sass         = require('gulp-sass');
-var sourcemaps   = require('gulp-sourcemaps');
-var uglify       = require('gulp-uglify');
+var browserSync = require('browser-sync').create();
+var changed = require('gulp-changed');
+var concat = require('gulp-concat');
+var flatten = require('gulp-flatten');
+var gulp = require('gulp');
+var gulpif = require('gulp-if');
+var imagemin = require('gulp-imagemin');
+var jshint = require('gulp-jshint');
+var lazypipe = require('lazypipe');
+var less = require('gulp-less');
+var merge = require('merge-stream');
+var minifyCss = require('gulp-minify-css');
+var plumber = require('gulp-plumber');
+var rev = require('gulp-rev');
+var runSequence = require('run-sequence');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./app/assets/manifest.json');
@@ -43,18 +43,16 @@ var enabled = {
     stripJSDebug: argv.production
 };
 
-var cssTasks = function(filename) {
+var cssTasks = function (filename) {
     return lazypipe()
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(!enabled.failStyleTask, plumber());
         })
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.maps, sourcemaps.init());
         })
-        .pipe(function() {
-            return gulpif('*.less', less());
-        })
-        .pipe(function() {
+        .pipe(function () {
+
             return gulpif('*.scss', sass({
                 outputStyle: 'nested', // libsass doesn't support expanded yet
                 precision: 10,
@@ -74,19 +72,19 @@ var cssTasks = function(filename) {
             advanced: false,
             rebase: false
         })
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.rev, rev());
         })
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.maps, sourcemaps.write('.', {
                 sourceRoot: 'app/assets/styles/'
             }));
         })();
 };
 
-var jsTasks = function(filename) {
+var jsTasks = function (filename) {
     return lazypipe()
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.maps, sourcemaps.init());
         })
         .pipe(concat, filename)
@@ -95,10 +93,10 @@ var jsTasks = function(filename) {
                 'drop_debugger': enabled.stripJSDebug
             }
         })
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.rev, rev());
         })
-        .pipe(function() {
+        .pipe(function () {
             return gulpif(enabled.maps, sourcemaps.write('.', {
                 sourceRoot: 'app/assets/scripts/'
             }));
@@ -110,7 +108,7 @@ var revManifest = path.dist + 'assets.json';
 
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
-var writeToManifest = function(directory) {
+var writeToManifest = function (directory) {
     return lazypipe()
         .pipe(gulp.dest, path.dist + directory)
         .pipe(browserSync.stream, {match: '**/*.{js,css}'})
@@ -125,10 +123,10 @@ var writeToManifest = function(directory) {
 
 gulp.task('styles', ['wiredep'], function() {
     var merged = merge();
-    manifest.forEachDependency('css', function(dep) {
+    manifest.forEachDependency('css', function (dep) {
         var cssTasksInstance = cssTasks(dep.name);
         if (!enabled.failStyleTask) {
-            cssTasksInstance.on('error', function(err) {
+            cssTasksInstance.on('error', function (err) {
                 console.error(err.message);
                 this.emit('end');
             });
@@ -141,11 +139,10 @@ gulp.task('styles', ['wiredep'], function() {
 });
 
 
-
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See
 // https://github.com/taptapship/wiredep
-gulp.task('wiredep', function() {
+gulp.task('wiredep', function () {
     var wiredep = require('wiredep').stream;
     return gulp.src(project.css)
         .pipe(wiredep())
@@ -155,7 +152,7 @@ gulp.task('wiredep', function() {
         .pipe(gulp.dest(path.source + 'styles'));
 });
 
-gulp.task('log', function() {
+gulp.task('log', function () {
     console.log(manifest);
 });
 
@@ -163,7 +160,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 
 
 // Watch files for changes & reload
-gulp.task('serve', function() {
+gulp.task('serve', function () {
     browserSync.init({
         logPrefix: 'WSK',
         server: 'app',
@@ -172,32 +169,21 @@ gulp.task('serve', function() {
     console.log(path.source);
     gulp.watch(['app/**/*.html'], reload);
     gulp.watch([path.source + 'styles/**/*'], ['styles'], reload);
-   // gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-   // gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
-   // gulp.watch([path.source + 'images/**/*'], ['images']);
-   // gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
+    // gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
+    // gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
+    // gulp.watch([path.source + 'images/**/*'], ['images']);
+    // gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
 
-// Static Server + watching scss/html files
-gulp.task('serve2', function() {
 
-    browserSync.init({
-        server: "app"
-    });
-
-    gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
-});
-
-gulp.task('build', function(callback) {
+gulp.task('build', function (callback) {
     runSequence('styles',
         'scripts',
         ['fonts', 'images'],
         callback);
 });
 
-
-gulp.task('default', ['clean'], function() {
+gulp.task('default', ['clean'], function () {
     gulp.start('build');
 });
 

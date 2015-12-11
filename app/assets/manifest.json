@@ -19,6 +19,10 @@
       "bower": ["jquery"]
     }
   },
+  "paths": {
+    "source": "app/assets/",
+    "dist": "dist/"
+  },
   "config": {
     "devUrl": "http://vicensfayos.local"
   }
