@@ -135,12 +135,12 @@ var writeToManifest = function (directory) {
 
 /** tasks **/
 
-gulp.task('sass', ['wiredep'], function()) {
+gulp.task('sass', ['wiredep'], function() {
     var merged = merge();
     manifest.forEachDependency('css', function (dep) {
         var cssTasksInstance = sassTasks(dep.name);
     }
-}
+});
 
 gulp.task('styles', ['wiredep'], function() {
     var merged = merge();
