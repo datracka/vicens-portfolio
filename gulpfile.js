@@ -20,7 +20,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
-var manifest = require('asset-builder')('./app/assets/manifest.json');
+var manifest = require('asset-builder')('./app/manifest.json');
 //paths to assets directories
 var globs = manifest.globs;
 var path = manifest.paths;
@@ -41,6 +41,19 @@ var enabled = {
     failJSHint: argv.production,
     // Strip debug statments from javascript when `--production`
     stripJSDebug: argv.production
+};
+
+var sassTasks = function (filename) {
+    return lazypipe()
+        .pipe(function () {
+
+            return gulpif('*.scss', sass({
+                outputStyle: 'nested', // libsass doesn't support expanded yet
+                precision: 10,
+                includePaths: ['.'],
+                errLogToConsole: !enabled.failStyleTask
+            }));
+        })
 };
 
 var cssTasks = function (filename) {
@@ -109,6 +122,7 @@ var revManifest = path.dist + 'assets.json';
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function (directory) {
+    console.log(gulp.dest, path, gulp.src);
     return lazypipe()
         .pipe(gulp.dest, path.dist + directory)
         .pipe(browserSync.stream, {match: '**/*.{js,css}'})
@@ -121,6 +135,13 @@ var writeToManifest = function (directory) {
 
 /** tasks **/
 
+gulp.task('sass', ['wiredep'], function()) {
+    var merged = merge();
+    manifest.forEachDependency('css', function (dep) {
+        var cssTasksInstance = sassTasks(dep.name);
+    }
+}
+
 gulp.task('styles', ['wiredep'], function() {
     var merged = merge();
     manifest.forEachDependency('css', function (dep) {
@@ -131,8 +152,8 @@ gulp.task('styles', ['wiredep'], function() {
                 this.emit('end');
             });
         }
-        merged.add(gulp.src(dep.globs, {base: 'styles'})
-            .pipe(cssTasksInstance));
+       // merged.add(gulp.src(dep.globs, {base: 'styles'})
+         //   .pipe(cssTasksInstance));
     });
     return merged
         .pipe(writeToManifest('styles'));
