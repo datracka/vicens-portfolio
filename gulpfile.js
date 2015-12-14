@@ -1,3 +1,5 @@
+'use strict';
+
 var argv = require('minimist')(process.argv.slice(2));
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
@@ -28,7 +30,7 @@ var path = manifest.paths;
 var config = manifest.config || {};
 var project = manifest.getProjectGlobs();
 
-const reload = browserSync.reload;
+var reload = browserSync.reload;
 
 // CLI options
 var enabled = {
@@ -183,6 +185,33 @@ gulp.task('log', function () {
     console.log(manifest);
 });
 
+// ### Scripts
+// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
+// and project JS.
+gulp.task('scripts', ['jshint'], function() {
+    var merged = merge();
+    manifest.forEachDependency('js', function(dep) {
+        merged.add(
+            gulp.src(dep.globs, {base: 'scripts'})
+                .pipe(jsTasks(dep.name))
+        );
+    });
+    return merged
+        .pipe(writeToManifest('scripts'));
+});
+
+// `gulp jshint` - Lints configuration JSON and project JS.
+gulp.task('jshint', function() {
+    return gulp.src([
+            'bower.json', 'gulpfile.js'
+        ].concat(project.js))
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
+});
+
+/* Main tasks */
+
 gulp.task('clean', require('del').bind(null, [path.dist]));
 
 
@@ -217,6 +246,7 @@ gulp.task('default', ['clean'], function () {
 /*TASKS
 
  $ gulp [ --production ] for building assets /dist (staging and production)
+ $ gulp sass -> compile sass into app folder
  $ gulp serve -> serve the development folder /app with browser sync
 
  */
