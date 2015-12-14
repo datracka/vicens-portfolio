@@ -21,7 +21,7 @@ var uglify = require('gulp-uglify');
 var header = require('gulp-header');
 
 // See https://github.com/austinpray/asset-builder
-var manifest = require('asset-builder')('./app/manifest.json');
+var manifest = require('asset-builder')('./manifest.json');
 //paths to assets directories
 var globs = manifest.globs;
 var path = manifest.paths;
@@ -42,18 +42,6 @@ var enabled = {
     failJSHint: argv.production,
     // Strip debug statments from javascript when `--production`
     stripJSDebug: argv.production
-};
-
-var sassTasks = function (filename) {
-    return lazypipe()
-        .pipe(function () {
-            return gulpif('*.scss', sass({
-                outputStyle: 'nested', // libsass doesn't support expanded yet
-                precision: 10,
-                includePaths: ['.'],
-                errLogToConsole: !enabled.failStyleTask
-            }));
-        })();
 };
 
 var cssTasks = function (filename) {
@@ -133,34 +121,32 @@ var writeToManifest = function (directory) {
         .pipe(gulp.dest, path.dist)();
 };
 
-var mycopy = function () {
+var sassTasks = function () {
     return lazypipe()
-        .pipe(browserSync.stream, {match: '**/*.{js,css}'})
-        .pipe(gulp.dest, path.styles)();
+        .pipe(function () {
+            return gulpif('*.scss', sass({
+                outputStyle: 'nested', // libsass doesn't support expanded yet
+                precision: 10,
+                includePaths: ['.'],
+                errLogToConsole: !enabled.failStyleTask
+            }));
+        })
+        .pipe(browserSync.stream, {match: '**/*.{css}'})
+        .pipe(gulp.dest, path.css)();
 };
 
 
 /** tasks **/
 
-gulp.task('sass', ['wiredep'], function () {
-    var merged = merge();
-    manifest.forEachDependency('css', function (dep) {
-        var sassTasksInstance = sassTasks(dep.name);
-        if (!enabled.failStyleTask) {
-            sassTasksInstance.on('error', function (err) {
-                console.error(err.message);
-                this.emit('end');
-            });
-        }
+gulp.task('sass', function () {
 
-        merged.add(gulp.src(dep.globs, {base: 'styles'})
-            .pipe(sassTasksInstance));
-    });
+    var merged = merge();
+    merged.add(gulp.src('./app/styles/*.scss'));
 
     return merged
-        .pipe(mycopy());
-
+        .pipe(sassTasks());
 });
+
 
 gulp.task('styles', ['wiredep'], function () {
     var merged = merge();

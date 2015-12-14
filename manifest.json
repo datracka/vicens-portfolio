@@ -20,7 +20,7 @@
     }
   },
   "paths": {
-    "styles": "styles/",
+    "css": "app/css/",
     "source": "app/",
     "dist": "dist/"
   },
