@@ -1,8 +1,6 @@
 @import "common/variables";
 
-// Automatically injected Bower dependencies via wiredep (never manually edit this block)
-// bower:scss
-// endbower
+//@import "../../bower_components/material-design-lite/src/material-design-lite.scss";
 
 
 @import "common/global";
@@ -13,6 +11,6 @@
 @import "layouts/posts";
 
 body {
-  background-color: blue;
+  background-color: transparent;
 }
 

@@ -10,10 +10,12 @@
       "files": [
         "styles/main.scss"
       ],
-      "vendor": [
-        "../bower_components/material-design-lite/src/material.min.css"
-      ],
       "main": true
+    },
+    "customizer.js": {
+      "files": [
+        "scripts/customizer.js"
+      ]
     },
     "jquery.js": {
       "bower": ["jquery"]

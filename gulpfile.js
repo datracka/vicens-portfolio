@@ -32,6 +32,28 @@ var project = manifest.getProjectGlobs();
 
 var reload = browserSync.reload;
 
+/*
+
+ Tasks:
+
+ For development:
+
+ Sass: Compile the style sass folder into css (done!)
+ Scripts: Compile and bundle JS into JS folder using webpack-stream (pending!) with external libraries included.
+ jshint: Hint Js is a subtask from Scripts
+ serve: initialise browserSync and watch for changes for running previous tasks (pending!)
+
+ Staging - Build (--production flag):
+
+ Images: Copy Images for distribution (done!)
+ Font: Copy fonts for distribution (done!)
+ Minify&Uglify Js: Copy and minify Js bundle for distribution (pending!)
+ Html: Copy Html and other app files for dist (pending!) **Use GSK approach
+ Clean: Clean diet directory:
+ Build (default): Call all the build tasks.
+
+ */
+
 // CLI options
 var enabled = {
     // Enable static asset revisioning when `--production`
@@ -164,7 +186,7 @@ gulp.task('styles', ['wiredep'], function () {
             .pipe(cssTasksInstance));
     });
     return merged
-        .pipe(writeToManifest('styles'));
+        .pipe(writeToManifest('css'));
 });
 
 
@@ -188,9 +210,10 @@ gulp.task('log', function () {
 // ### Scripts
 // `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
 // and project JS.
-gulp.task('scripts', ['jshint'], function() {
+gulp.task('scripts2', ['jshint'], function() {
     var merged = merge();
     manifest.forEachDependency('js', function(dep) {
+        console.log(dep.name);
         merged.add(
             gulp.src(dep.globs, {base: 'scripts'})
                 .pipe(jsTasks(dep.name))
@@ -208,6 +231,40 @@ gulp.task('jshint', function() {
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
+});
+
+// ### Fonts
+// `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
+// structure. See: https://github.com/armed/gulp-flatten
+gulp.task('fonts', function() {
+    return gulp.src(globs.fonts)
+        .pipe(flatten())
+        .pipe(gulp.dest(path.dist + 'fonts'))
+        .pipe(browserSync.stream());
+});
+
+// ### Images
+// `gulp images` - Run lossless compression on all the images.
+gulp.task('images', function() {
+    return gulp.src(globs.images)
+        .pipe(imagemin({
+            progressive: true,
+            interlaced: true,
+            svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
+        }))
+        .pipe(gulp.dest(path.dist + 'images'))
+        .pipe(browserSync.stream());
+});
+
+// Copy all files at the root level (app)
+gulp.task('copy', function () {
+    gulp.src([
+        'app/*',
+        '!app/styles'
+    ], {
+        dot: true
+    }).pipe(gulp.dest('dist'));
+
 });
 
 /* Main tasks */
@@ -235,7 +292,7 @@ gulp.task('serve', function () {
 gulp.task('build', function (callback) {
     runSequence('styles',
         'scripts',
-        ['fonts', 'images'],
+        ['fonts', 'images','copy'],
         callback);
 });
 
