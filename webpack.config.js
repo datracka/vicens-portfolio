@@ -1,3 +1,11 @@
+/* pending
+
+    - manage css external dependencies (mdl)
+    - manage js external dependencies
+    - add jshint / eslint linting
+    - create a distribution
+ */
+
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // webpack.config.js
