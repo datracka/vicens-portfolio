@@ -1,11 +1,4 @@
-'use strict';
+require('../styles/main.scss');
 
-var div = document.getElementById('divID');
-div.innerHTML = div.innerHTML + 'Extra me';
-
-//console.log($('byID').html());
-
-
-function my_function () {
-    return "Hello World";
-}
+// main.js
+document.write('<h1>Hello World 2</h1>');
