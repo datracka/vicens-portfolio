@@ -2,7 +2,7 @@ var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 // webpack.config.js
 module.exports = {
-    entry: './app/scripts/main.js',
+    entry: './src/scripts/main.js',
     output: {
         filename: './app/js/bundle.js'
     },
