@@ -11,6 +11,7 @@
   "devDependencies": {
     "asset-builder": "^1.1.0",
     "bower": "^1.7.0",
+    "bower-webpack-plugin": "^0.1.9",
     "browser-sync": "^2.10.0",
     "browser-sync-webpack-plugin": "^1.0.1",
     "css-loader": "^0.23.0",
@@ -31,7 +32,6 @@
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.1",
-    "jquery": "^2.1.4",
     "jshint": "^2.8.0",
     "jshint-stylish": "^2.1.0",
     "lazypipe": "^1.0.1",

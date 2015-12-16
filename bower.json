@@ -12,8 +12,10 @@
     "test",
     "tests"
   ],
-  "dependencies": {
-    "material-design-lite": "~1.0.6"
-  },
-  "devDependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "material-design-lite": "~1.0.6",
+    "preloadjs": "*",
+    "jquery": "~2.1.4"
+  }
 }

@@ -1,4 +1,5 @@
 require('../styles/main.scss');
+require('jquery');
+require('material-design-lite');
 
-// main.js
-document.write('<h1>Hello World 2</h1>');
+//http://codepen.io/yvesvanbroekhoven/pen/Efkar
