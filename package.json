@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --port 3100",
-    "deploy": "NODE_ENV=production webpack -p"
+    "dev": "webpack-dev-server --devtool source-map --progress --colors --port 3100",
+    "deploy": "NODE_ENV=production webpack -p",
+    "build": "NODE_ENV=development webpack -d --progress --devtool source-map"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "lazypipe": "^1.0.1",
     "merge-stream": "^1.0.0",
     "node-sass": "^3.4.2",
+    "raw-loader": "^0.5.1",
     "run-sequence": "^1.1.5",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
