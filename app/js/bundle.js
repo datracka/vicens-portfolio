@@ -56,7 +56,7 @@
 	__webpack_require__(/*! material-design-lite */ 9);
 	
 	//http://codepen.io/yvesvanbroekhoven/pen/Efkar
-	document.write('<h1>Hello World</h1>');
+	
 	
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(/*! ./~/process/browser.js */ 1)))
 
