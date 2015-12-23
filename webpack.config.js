@@ -20,7 +20,11 @@ module.exports = {
     module: {
         loaders: [
             {test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'},
-            {test: /\.css$/, loader: 'style-loader!css-loader'}
+            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            {
+                test: /\.html$/,
+                loader: "raw-loader"
+            }
         ]
     },
     plugins: [
