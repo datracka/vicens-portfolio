@@ -1,13 +1,39 @@
+@import "bourbon/bourbon";
 @import "common/variables";
-
-//@import "../../bower_components/material-design-lite/src/material-design-lite.scss";
-
-
 @import "common/global";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
 
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+.layout {
+  background-color: transparent;
+}
+
+.box {
+  background-color: #b0bec5;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #000000;
+  position: relative;
+  text-align: center;
+}
+
+.box2 {
+  background-color: #b0bec5;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #000000;
+  position: relative;
+  text-align: center;
+}
 
