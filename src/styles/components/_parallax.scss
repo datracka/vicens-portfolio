@@ -1,0 +1,42 @@
+
+/**
+http://keithclark.co.uk/articles/pure-css-parallax-websites/demo3/
+Example:
+
+        <div class="parallax__group">
+            <div class="parallax__element parallax__layer--base parallax__element--current">
+                <span class="text"></span>
+            </div>
+        </div>
+
+*/
+.parallax__group {
+  position: relative;
+  heiggh: 500px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include perspective (1px);
+  z-index:1;
+
+}
+
+.parallax__element {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: block;
+}
+
+.parallax__layer--base {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  z-index: 4;
+}
+
+/*commented: does not work with Pure CSS parallax */
+.parallax__element--current {
+  //position: fixed;
+}

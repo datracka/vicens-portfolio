@@ -1,0 +1,30 @@
+.pre-loader {
+  z-index: 1000;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  cursor: default;
+  pointer-events: none;
+  color: #fff;
+  display: none;
+}
+
+.pre-loader__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.pre-loader__spinner {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+}

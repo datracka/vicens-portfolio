@@ -1,39 +1,16 @@
 @import "bourbon/bourbon";
 @import "common/variables";
 @import "common/global";
-
-html {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+@import "components/parallax";
+@import "components/pre-loader";
 
 
-.layout {
-  background-color: transparent;
-}
 
-.box {
-  background-color: #b0bec5;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #000000;
-  position: relative;
+.text {
   text-align: center;
-}
-
-.box2 {
-  background-color: #b0bec5;
-  position: relative;
-  height: 100%;
-  width: 100%;
-  border: 1px solid #000000;
-  position: relative;
-  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
 }
 
