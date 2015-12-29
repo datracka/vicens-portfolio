@@ -9,8 +9,7 @@
   height: 100%;
   cursor: default;
   pointer-events: none;
-  color: #fff;
-  display: none;
+  @include background-color();
 }
 
 .pre-loader__container {
@@ -27,4 +26,12 @@
   left: 50%;
   top: 50%;
   @include transform(translate(-50%, -50%));
+
+  svg{
+    width:  100px;
+    height: 100px;
+  }
+  path {
+    fill: $blue-lighter;
+  }
 }

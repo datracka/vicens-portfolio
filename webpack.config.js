@@ -31,7 +31,7 @@ module.exports = {
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 3000,
-            server: {baseDir: ['app']}
+            proxy: 'http://localhost:3100/webpack-dev-server/app/', //BS act as a proxy for webpack-de-server
         }),
         new BowerWebpackPlugin(),
         new webpack.ProvidePlugin({

@@ -5,5 +5,28 @@ $icon-font-path:        "../fonts/";
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
+/* Palette templates paletton.com */
+
+$black:          #000 !default;
+$grayDarker:     #222 !default;
+$grayDark:       #333 !default;
+$gray:           #555 !default;
+$grayLight:      #999 !default;
+$grayLighter:    #eee !default;
+$white:          #fff !default;
+
+$blue-darkest     : #215564;
+$blue-dark        : #388D9B;
+$blue             : #4AB7C3;
+$blue-light       : #86D0DA;
+$blue-lighter     : #B1E1E8;
+$blue-lightest    : #BCE5EB;
+
 // Colors
-$brand-primary:         #27ae60;
+$green            : #4DCE9A;
+$greenFluor       : #53E053;
+$ocean            : #597CCC;
+$lila             : #765CCF;
+$rosa             : #EF5986;
+$red              : #FF5F5F;
+$orange           : #FF8F5F;

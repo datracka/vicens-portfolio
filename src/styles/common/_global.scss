@@ -14,12 +14,18 @@ html {
   padding: inherit;
 }
 
-.layout {
+@mixin background-color() {
   background:
-          linear-gradient(45deg, transparent 0%, transparent 57%, #423246 100%),
-          linear-gradient(-45deg, #8f5046 0%, #A14436 0.3%, #4C2556 112%, transparent 11%),
-          linear-gradient(-90deg, #A14436 100%, #A14436 65%, transparent 20%);
+          linear-gradient(45deg, transparent 0%, transparent 57%, $gray 100%),
+          linear-gradient(-45deg, $rosa 0%, $lila 0.3%, $ocean 112%, transparent 11%),
+          linear-gradient(-90deg, $rosa 100%, $rosa 65%, transparent 20%);
 }
+
+
+.layout {
+  @include background-color();
+}
+
 
 .layout-container {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGCQBOLnQAwGjDAGNgGwSgwVAE+2AgXahLM7AAAAAElFTkSuQmCC) repeat;
