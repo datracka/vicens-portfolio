@@ -10,12 +10,20 @@ var path = require("path");
 var webpack = require("webpack");
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-
+var CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
+console.log(path.join(__dirname, "js"));
 // webpack.config.js
 module.exports = {
-    entry: './src/scripts/main.js',
+    //entry: './src/scripts/main.js',
+    //https://webpack.github.io/docs/multiple-entry-points.html
+    entry: {
+        main: "./src/scripts/main.js", //main app entry point
+        preloader: "./src/scripts/pre-loader.js" //preloader entry point
+    },
     output: {
-        filename: './app/js/bundle.js'
+        //filename: './app/js/bundle.js'
+        path: path.join(__dirname, "app/js"),
+        filename: "[name].bundle.js"
     },
     module: {
         loaders: [
@@ -32,14 +40,16 @@ module.exports = {
             host: 'localhost',
             port: 3000,
             proxy: 'http://localhost:3100/webpack-dev-server/app/', //BS act as a proxy for webpack-de-server
+            //server: { baseDir: ['./app'] }
         }),
         new BowerWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
-        }),
-        new webpack.ProvidePlugin({ //do it external. It is not doing well on the pipeline
-            createjs: "preloadjs"
         })
     ]
-};
+    /*externals: {
+          "bundle!jquery": "jQuery"
+    }*/
+}
+;

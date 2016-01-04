@@ -6,6 +6,7 @@ require('../styles/main.scss');
 require('jquery');
 require('material-design-lite');
 
+console.log("hola5!");
 //preloader
 //http://codepen.io/yvesvanbroekhoven/pen/Efkar
 //ambient background color http://codepen.io/somenumboola/pen/wAhCy
