@@ -1,11 +1,16 @@
 
-html {
+html, body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  height: 100%;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Raleway', helvetica, arial, sans-serif;
 }
 
 *, *:before, *:after {
@@ -14,19 +19,45 @@ html {
   padding: inherit;
 }
 
-@mixin background-color() {
-  background:
-          linear-gradient(45deg, transparent 0%, transparent 57%, $gray 100%),
-          linear-gradient(-45deg, $rosa 0%, $lila 0.3%, $ocean 112%, transparent 11%),
-          linear-gradient(-90deg, $rosa 100%, $rosa 65%, transparent 20%);
+@mixin background-color($first, $up, $down, $fourth) {
+  background-color: $up;
+/*  background:
+  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/
+}
+
+@mixin main-block() {
+  position: relative;
+  text-align: center;
+  height: 100%;
+  cursor: default;
+  pointer-events: none;
+  display: block;
+}
+@mixin container() {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
 }
 
 
 .layout {
-  @include background-color();
+  @include background-color($blue, $orange, $white, $blue);
 }
 
 
 .layout-container {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGCQBOLnQAwGjDAGNgGwSgwVAE+2AgXahLM7AAAAAElFTkSuQmCC) repeat;
+}
+
+
+
+.text {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
 }

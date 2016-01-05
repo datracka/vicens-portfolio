@@ -2,15 +2,26 @@
 @import "common/variables";
 @import "common/global";
 //@import "components/parallax";
-@import "components/pre-loader";
+//@import "components/pre-loader";
+@import "components/sections";
+@import "components/section1";
 
 
 
-.text {
+section {
   text-align: center;
+  position: relative;
+  background: #fff;
+  z-index: 800;
+  height: 100%;
+}
+
+.content {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  @include transform(translate(-50%, -50%));
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10vh 6vw;
 }
 

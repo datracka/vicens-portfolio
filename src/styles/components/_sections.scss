@@ -1,0 +1,42 @@
+.section {
+  @include main-block();
+
+  &__container {
+
+    @include container();
+
+    &--current {
+      position: fixed;
+    }
+
+    &--red {
+      @include background-color($grayLighter, $orange, $grayLighter, $grayLighter);
+    }
+
+    &--green {
+      @include background-color($grayLighter, $green, $grayLight, $grayLighter);
+    }
+
+    &--blue{
+      @include background-color($grayLighter, $ocean, $grayLight, $grayLighter);
+    }
+
+    &--rosa {
+      @include background-color($grayLighter, $rosa, $grayLight, $grayLighter);
+    }
+
+  }
+
+  &__wrapper {
+    color: $red;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+
+}
+
+
+

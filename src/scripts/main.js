@@ -2,13 +2,12 @@ if (process.env.NODE_ENV === 'development') {
     require('../../app/index.html')
 }
 
+//require('material-design-lite');
 require('../styles/main.scss');
 require('jquery');
-require('material-design-lite');
 
-console.log("hola5!");
-//preloader
-//http://codepen.io/yvesvanbroekhoven/pen/Efkar
+
+
 //ambient background color http://codepen.io/somenumboola/pen/wAhCy
 //porfolio ideas:
 

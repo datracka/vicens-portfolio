@@ -1,0 +1,41 @@
+
+.logo {
+  font-size: 4rem;
+  color: $red;
+
+  &--image {
+    width: 6rem;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__header {
+    display: block;
+    color: white;
+    small {
+      display: block;
+      font-size: 2rem;
+      font-weight: 100;
+    }
+
+    strong {
+      display: block;
+      font-size: 4rem;
+      font-weight: 100;
+    }
+  }
+
+}
+
+.more {
+
+  width: 100%;
+  bottom: 4vh;
+  display: block;
+  position: absolute;
+
+  .more__image {
+    width: 3rem;
+  }
+
+}
