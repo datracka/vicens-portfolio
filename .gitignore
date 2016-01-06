@@ -2,4 +2,5 @@
 /bower_components
 /.idea
 /dist
+/app/js
 /npm-debug.log
