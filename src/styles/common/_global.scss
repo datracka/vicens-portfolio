@@ -19,10 +19,9 @@ html, body {
   padding: inherit;
 }
 
-@mixin background-color($first, $up, $down, $fourth) {
+@mixin background-color($up, $down) {
   background-color: $up;
-/*  background:
-  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/
+  @include linear-gradient(to bottom, $up 60%, $down, $fallback: $up);
 }
 
 @mixin main-block() {
@@ -40,11 +39,6 @@ html, body {
   right: 0;
   bottom: 0;
   display: block;
-}
-
-
-.layout {
-  @include background-color($blue, $orange, $white, $blue);
 }
 
 

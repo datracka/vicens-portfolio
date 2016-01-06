@@ -5,7 +5,7 @@ if (process.env.NODE_ENV === 'development') {
 //require('material-design-lite');
 require('../styles/main.scss');
 require('jquery');
-
+require("scrollreveal");
 
 
 //ambient background color http://codepen.io/somenumboola/pen/wAhCy

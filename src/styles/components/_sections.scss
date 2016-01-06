@@ -10,19 +10,19 @@
     }
 
     &--red {
-      @include background-color($grayLighter, $orange, $grayLighter, $grayLighter);
+      @include background-color($orange, transparent);
     }
 
     &--green {
-      @include background-color($grayLighter, $green, $grayLight, $grayLighter);
+      @include background-color($green, $grayLighter);
     }
 
     &--blue{
-      @include background-color($grayLighter, $ocean, $grayLight, $grayLighter);
+      @include background-color($ocean, transparent);
     }
 
     &--rosa {
-      @include background-color($grayLighter, $rosa, $grayLight, $grayLighter);
+      @include background-color($rosa, transparent);
     }
 
   }

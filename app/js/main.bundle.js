@@ -45,13 +45,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {if (process.env.NODE_ENV === 'development') {
-	    __webpack_require__(2)
+	    __webpack_require__(6)
 	}
 
 	//require('material-design-lite');
-	__webpack_require__(3);
 	__webpack_require__(7);
-
+	__webpack_require__(11);
+	__webpack_require__(4);
 
 
 	//ambient background color http://codepen.io/somenumboola/pen/wAhCy
@@ -166,22 +166,522 @@
 
 
 /***/ },
-/* 2 */
-/***/ function(module, exports) {
+/* 2 */,
+/* 3 */,
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<!doctype html>\n<html lang=\"\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"description\" content=\"Vicens Fayos Portfolio and showcase\">\n\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Vicens Fayos</title>\n\n    <!-- Disable tap highlight on IE -->\n    <meta name=\"msapplication-tap-highlight\" content=\"no\">\n\n    <!-- Web Application Manifest -->\n    <link rel=\"manifest\" href=\"manifest.json\">\n\n    <!-- Add to homescreen for Chrome on Android -->\n    <meta name=\"mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"application-name\" content=\"Vicens Fayos\">\n    <link rel=\"icon\" sizes=\"192x192\" href=\"images/touch/chrome-touch-icon-192x192.png\">\n\n    <!-- Add to homescreen for Safari on iOS -->\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n    <meta name=\"apple-mobile-web-app-title\" content=\"Web Starter Kit\">\n    <link rel=\"apple-touch-icon\" href=\"images/touch/apple-touch-icon.png\">\n\n    <!-- Tile icon for Win8 (144x144 + tile color) -->\n    <meta name=\"msapplication-TileImage\" content=\"images/touch/ms-touch-icon-144x144-precomposed.png\">\n    <meta name=\"msapplication-TileColor\" content=\"#2F3BA2\">\n\n    <!-- Color the status bar on mobile devices -->\n    <meta name=\"theme-color\" content=\"#2F3BA2\">\n    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>\n</head>\n<body>\n<!-- Uses a header that scrolls with the text, rather than staying\nlocked at the top -->\n\n<section class=\"section\">\n    <div class=\"section__container section__container--green\">\n        <div class=\"section__wrapper\">\n            <div class=\"logo\">\n                <img src=\"images/cube.svg\" alt=\"duck\" class=\"logo--image\">\n            </div>\n            <h1 class=\"logo__header\">\n                <small>Hi, I am Vicens Fayos</small>\n                <strong>Web Developer Expert</strong>\n            </h1>\n        </div>\n        <a href=\"#\" class=\"more\">\n            <img src=\"images/arrow-bottom-drop-circle.svg\" alt=\"arrow bottom\" class=\"more__image\">\n        </a>\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--blue\">\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--green\">\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--rosa\">\n    </div>\n</section>\n\n<script src=\"https://code.jquery.com/jquery-2.1.4.min.js\"></script>\n<!--<script src=\"https://code.createjs.com/preloadjs-0.6.2.min.js\"></script>-->\n<script src=\"js/main.bundle.js\"></script>\n\n<script>\n    (function (i, s, o, g, r, a, m) {\n        i['GoogleAnalyticsObject'] = r;\n        i[r] = i[r] || function () {\n                    (i[r].q = i[r].q || []).push(arguments)\n                }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n                m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        m.parentNode.insertBefore(a, m)\n    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');\n    ga('create', 'UA-XXXXX-X', 'auto');\n    ga('send', 'pageview');\n</script>\n</body>\n</html>\n"
+	module.exports = __webpack_require__(5);
 
 /***/ },
-/* 3 */
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(ScrollReveal) {
+	(function(root, factory) {
+	  if (true) {
+	    !(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory), __WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ? (__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) : __WEBPACK_AMD_DEFINE_FACTORY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	  } else if (typeof exports === 'object') {
+	    module.exports = factory(require, exports, module);
+	  } else {
+	    root.ScrollReveal = factory();
+	  }
+	}(this, function(require, exports, module) {
+
+	/*
+	            _____                 ________                       __
+	           / ___/______________  / / / __ \___ _   _____  ____ _/ /
+	           \__ \/ ___/ ___/ __ \/ / / /_/ / _ \ | / / _ \/ __ `/ /
+	          ___/ / /__/ /  / /_/ / / / _, _/  __/ |/ /  __/ /_/ / /
+	         /____/\___/_/   \____/_/_/_/ |_|\___/|___/\___/\__,_/_/    v3.0.6
+
+	‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+	   Copyright 2014–2016 Julian Lloyd (@jlmakes) Open source under MIT license
+	————————————————————————————————————————————————————————————————————————————————
+	    https://scrollrevealjs.org — https://github.com/jlmakes/scrollreveal.js
+	______________________________________________________________________________*/
+
+	(function() {
+	  var Tools, sr, _requestAnimationFrame;
+
+	  this.ScrollReveal = (function() {
+	    ScrollReveal.prototype.defaults = {
+	      // Animation
+	      origin      : 'bottom',
+	      distance    : '20px',
+	      duration    : 500,
+	      delay       : 0,
+	      rotate      : { x: 0, y: 0, z: 0 },
+	      opacity     : 0,
+	      scale       : 0.9,
+	      easing      : 'cubic-bezier( 0.6, 0.2, 0.1, 1 )',
+	      // Options
+	      container   : null,
+	      mobile      : true,
+	      reset       : false,
+	      useDelay    : 'always',
+	      viewFactor  : 0.2,
+	      viewOffset  : { top: 0, right: 0, bottom: 0, left: 0 },
+	      afterReveal : function( domEl ) {},
+	      afterReset  : function( domEl ) {}
+	    };
+
+	    function ScrollReveal( config ) {
+	      if ( window == this ) {
+	        return new ScrollReveal( config );
+	      }
+	      sr = this;
+	      sr.tools = new Tools();
+	      sr.tools.extend( sr.defaults, config || {} );
+
+	      if ( sr.tools.isMobile() && !sr.defaults.mobile ) {
+	        return false;
+	      } else if ( !sr.tools.isSupported('transform') || !sr.tools.isSupported('transition') ) {
+	        return console.warn('ScrollReveal is not supported in this browser.');
+	      }
+
+	      sr.store = {
+	        elements   : {},
+	        containers : []
+	      };
+	      sr.history     = [];
+	      sr.counter     = 0;
+	      sr.running     = false;
+	      sr.initialized = false;
+	      return sr;
+	    }
+
+	    ScrollReveal.prototype.reveal = function( selector, config, sync ) {
+	      var elements, container, elem, elemId;
+
+	      if ( config && config.container ) {
+	        container = config.container;
+	      } else if ( sr.defaults.container ) {
+	        container = sr.defaults.container;
+	      } else {
+	        container = window.document.documentElement;
+	      }
+
+	      elements = Array.prototype.slice.call( container.querySelectorAll( selector ) );
+	      if ( !elements.length ) {
+	        console.warn('reveal(\'' + selector + '\') failed: no elements found.');
+	        return sr;
+	      }
+	      for ( var i = 0; i < elements.length; i++ ) {
+	        elem   = {}
+	        elemId = elements[ i ].getAttribute('data-sr-id');
+
+	        if ( elemId ) {
+	          elem = sr.store.elements[ elemId ];
+	        } else {
+	          elem = {
+	            id       : ++sr.counter,
+	            domEl    : elements[ i ],
+	            seen     : false,
+	            revealed : false
+	          };
+	          elem.domEl.setAttribute( 'data-sr-id', elem.id );
+	        }
+
+	        sr.configure( elem, config || {} );
+	        sr.style( elem );
+	        sr.updateStore( elem );
+
+	        if ( !elem.revealed ) {
+	          elem.domEl.setAttribute( 'style',
+	              elem.styles.inline
+	            + elem.styles.transform.initial
+	          );
+	        }
+	      }
+	      if ( !sync ) {
+	        sr.record( selector, config );
+	        if ( sr.initTimeout ) {
+	          window.clearTimeout( sr.initTimeout );
+	        }
+	        sr.initTimeout = window.setTimeout( sr.init, 0 );
+	      }
+	      return sr;
+	    };
+
+	    ScrollReveal.prototype.configure = function( elem, config ) {
+	      if ( !elem.config ) {
+	        elem.config = sr.tools.extendClone( sr.defaults, config );
+	      } else {
+	        elem.config = sr.tools.extendClone( elem.config, config );
+	      }
+
+	      if ( elem.config.origin === 'top' || elem.config.origin === 'bottom' ) {
+	        elem.config.axis = 'Y';
+	      } else {
+	        elem.config.axis = 'X';
+	      }
+
+	      if ( elem.config.origin === 'top' || elem.config.origin === 'left' ) {
+	        elem.config.distance = '-' + elem.config.distance;
+	      }
+	    };
+
+	    ScrollReveal.prototype.style = function( elem ) {
+	      var config   = elem.config;
+	      var computed = window.getComputedStyle( elem.domEl );
+
+	      if ( !elem.styles ) {
+	        elem.styles = {
+	          transition : {},
+	          transform  : {},
+	          computed   : {}
+	        };
+	        elem.styles.inline           = elem.domEl.getAttribute('style') || '';
+	        elem.styles.inline          += '; visibility: visible; ';
+	        elem.styles.computed.opacity = computed.opacity;
+
+	        if ( !computed.transition || computed.transition == 'all 0s ease 0s' ) {
+	          elem.styles.computed.transition = '';
+	        } else {
+	          elem.styles.computed.transition = computed.transition + ', ';
+	        }
+	      }
+
+	      elem.styles.transition.instant = '-webkit-transition: ' + elem.styles.computed.transition + '-webkit-transform ' + config.duration / 1000 + 's ' + config.easing + ' 0s, opacity ' + config.duration / 1000 + 's ' + config.easing + ' 0s; ' +
+	                                               'transition: ' + elem.styles.computed.transition + 'transform ' + config.duration / 1000 + 's ' + config.easing + ' 0s, opacity ' + config.duration / 1000 + 's ' + config.easing + ' 0s; ';
+
+	      elem.styles.transition.delayed = '-webkit-transition: ' + elem.styles.computed.transition + '-webkit-transform ' + config.duration / 1000 + 's ' + config.easing + ' ' + config.delay / 1000 + 's, opacity ' + config.duration / 1000 + 's ' + config.easing + ' ' + config.delay / 1000 + 's; ' +
+	                                               'transition: ' + elem.styles.computed.transition + 'transform ' + config.duration / 1000 + 's ' + config.easing + ' ' + config.delay / 1000 + 's, opacity ' + config.duration / 1000 + 's ' + config.easing + ' ' + config.delay / 1000 + 's; ';
+
+	      elem.styles.transform.initial = ' -webkit-transform:';
+	      elem.styles.transform.target  = ' -webkit-transform:';
+	      generateTransform( elem.styles.transform );
+
+	      elem.styles.transform.initial += 'transform:';
+	      elem.styles.transform.target  += 'transform:';
+	      generateTransform( elem.styles.transform );
+
+	      function generateTransform( transform ) {
+	        if ( parseInt( config.distance ) ) {
+	          transform.initial += ' translate' + config.axis + '(' + config.distance + ')';
+	          transform.target  += ' translate' + config.axis + '(0)';
+	        }
+	        if ( config.scale ) {
+	          transform.initial += ' scale(' + config.scale + ')';
+	          transform.target  += ' scale(1)';
+	        }
+	        if ( config.rotate.x ) {
+	          transform.initial += ' rotateX(' + config.rotate.x + 'deg)';
+	          transform.target  += ' rotateX(0)';
+	        }
+	        if ( config.rotate.y ) {
+	          transform.initial += ' rotateY(' + config.rotate.y + 'deg)';
+	          transform.target  += ' rotateY(0)';
+	        }
+	        if ( config.rotate.z ) {
+	          transform.initial += ' rotateZ(' + config.rotate.z + 'deg)';
+	          transform.target  += ' rotateZ(0)';
+	        }
+	        transform.initial += '; opacity: ' + config.opacity + ';';
+	        transform.target  += '; opacity: ' + elem.styles.computed.opacity + ';';
+	      }
+	    };
+
+	    ScrollReveal.prototype.updateStore = function( elem ) {
+	      var container = elem.config.container;
+	      if ( container && sr.store.containers.indexOf( container ) == -1 ) {
+	        sr.store.containers.push( elem.config.container );
+	      }
+	      sr.store.elements[ elem.id ] = elem;
+	    };
+
+	    ScrollReveal.prototype.record = function( selector, config ) {
+	      var record = {
+	        selector : selector,
+	        config   : config
+	      };
+	      sr.history.push( record );
+	    };
+
+	    ScrollReveal.prototype.init = function() {
+	      sr.animate();
+	      for ( var i = 0; i < sr.store.containers.length; i++ ) {
+	        sr.store.containers[ i ].addEventListener( 'scroll', sr.handler );
+	        sr.store.containers[ i ].addEventListener( 'resize', sr.handler );
+	      }
+	      if ( !sr.initialized ) {
+	        window.addEventListener( 'scroll', sr.handler );
+	        window.addEventListener( 'resize', sr.handler );
+	        sr.initialized = true;
+	      }
+	      return sr;
+	    };
+
+	    ScrollReveal.prototype.handler = function() {
+	      if ( !sr.running ) {
+	        _requestAnimationFrame(function(){
+	          sr.running = true;
+	          sr.animate();
+	        });
+	      }
+	    };
+
+	    ScrollReveal.prototype.animate = function() {
+	      var elem, visible;
+
+	      sr.tools.forOwn( sr.store.elements, function( elemId ) {
+	        elem    = sr.store.elements[ elemId ];
+	        visible = sr.isElemVisible( elem );
+	        if ( visible && !elem.revealed ) {
+
+	          if ( elem.config.useDelay === 'always'
+	          || ( elem.config.useDelay === 'onload' && !sr.initialized )
+	          || ( elem.config.useDelay === 'once'   && !elem.seen ) ) {
+	            elem.domEl.setAttribute( 'style',
+	                elem.styles.inline
+	              + elem.styles.transform.target
+	              + elem.styles.transition.delayed
+	            );
+	          } else {
+	            elem.domEl.setAttribute( 'style',
+	                elem.styles.inline
+	              + elem.styles.transform.target
+	              + elem.styles.transition.instant
+	            );
+	          }
+	          elem.seen = true;
+	          queueCallback( 'reveal', elem );
+
+	        } else if ( !visible && elem.config.reset && elem.revealed ) {
+	          elem.domEl.setAttribute( 'style',
+	              elem.styles.inline
+	            + elem.styles.transform.initial
+	            + elem.styles.transition.instant
+	          );
+	          queueCallback( 'reset', elem );
+	        }
+	      });
+
+	      sr.running = false;
+
+	      function queueCallback( type, elem ) {
+	        var elapsed  = 0;
+	        var duration = 0;
+	        var callback = 'after';
+
+	        switch ( type ) {
+	          case 'reveal':
+	            duration = elem.config.duration + elem.config.delay;
+	            callback += 'Reveal';
+	            break;
+	          case 'reset':
+	            duration = elem.config.duration;
+	            callback += 'Reset';
+	            break;
+	        }
+
+	        if ( elem.timer ) {
+	          elapsed = Math.abs( elem.timer.started - new Date() );
+	          window.clearTimeout( elem.timer.clock );
+	        }
+
+	        elem.timer = { started: new Date() };
+
+	        elem.timer.clock = window.setTimeout(function() {
+	          elem.config[ callback ]( elem.domEl );
+	          elem.timer = null;
+	        }, duration - elapsed );
+	        return type === 'reveal' ? elem.revealed = true : elem.revealed = false;
+	      }
+	    };
+
+	    ScrollReveal.prototype.getContainer = function( container ) {
+	      if ( !container ) {
+	        container = window.document.documentElement;
+	      }
+	      var w = container.clientWidth;
+	      var h = container.clientHeight;
+	      return {
+	        width:  w,
+	        height: h
+	      };
+	    };
+
+	    ScrollReveal.prototype.getScrolled = function( container ) {
+	      if ( !container ) {
+	        return {
+	          x: window.pageXOffset,
+	          y: window.pageYOffset
+	        };
+	      } else {
+	        var offset = sr.getOffset( container );
+	        return {
+	          x: container.scrollLeft + offset.left,
+	          y: container.scrollTop  + offset.top
+	        };
+	      }
+	    };
+
+	    ScrollReveal.prototype.getOffset = function( domEl ) {
+	      var offsetTop    = 0;
+	      var offsetLeft   = 0;
+	      var offsetHeight = domEl.offsetHeight;
+	      var offsetWidth  = domEl.offsetWidth;
+
+	      do {
+	        if ( !isNaN( domEl.offsetTop ) ) {
+	          offsetTop += domEl.offsetTop;
+	        }
+	        if ( !isNaN( domEl.offsetLeft ) ) {
+	          offsetLeft += domEl.offsetLeft;
+	        }
+	      } while ( domEl = domEl.offsetParent );
+
+	      return {
+	        top    : offsetTop,
+	        left   : offsetLeft,
+	        height : offsetHeight,
+	        width  : offsetWidth
+	      };
+	    };
+
+	    ScrollReveal.prototype.isElemVisible = function( elem ) {
+	      var offset     = sr.getOffset( elem.domEl );
+	      var container  = sr.getContainer( elem.config.container );
+	      var scrolled   = sr.getScrolled( elem.config.container );
+	      var vF         = elem.config.viewFactor;
+
+	      var elemHeight = offset.height;
+	      var elemWidth  = offset.width;
+	      var elemTop    = offset.top;
+	      var elemLeft   = offset.left;
+	      var elemBottom = elemTop  + elemHeight;
+	      var elemRight  = elemLeft + elemWidth;
+
+	      return ( confirmBounds() || isPositionFixed() );
+
+	      function confirmBounds() {
+	        var top        = elemTop    + elemHeight * vF;
+	        var left       = elemLeft   + elemWidth  * vF;
+	        var bottom     = elemBottom - elemHeight * vF;
+	        var right      = elemRight  - elemWidth  * vF;
+
+	        var viewTop    = scrolled.y + elem.config.viewOffset.top;
+	        var viewLeft   = scrolled.x + elem.config.viewOffset.left;
+	        var viewBottom = scrolled.y - elem.config.viewOffset.bottom + container.height;
+	        var viewRight  = scrolled.x - elem.config.viewOffset.right  + container.width;
+
+	        return ( top    < viewBottom )
+	            && ( bottom > viewTop    )
+	            && ( left   > viewLeft   )
+	            && ( right  < viewRight  );
+	      }
+
+	      function isPositionFixed() {
+	        return ( window.getComputedStyle( elem.domEl ).position === 'fixed' );
+	      }
+	    };
+
+	    ScrollReveal.prototype.sync = function() {
+	      if ( sr.history.length ) {
+	        for ( var i = 0; i < sr.history.length; i++ ) {
+	          var record = sr.history[ i ];
+	          sr.reveal( record.selector, record.config, true );
+	        };
+	        sr.init();
+	      } else {
+	        console.warn('sync() failed: no reveals found.');
+	      }
+	      return sr;
+	    };
+
+	    return ScrollReveal;
+
+	  })();
+
+	  var Tools = (function() {
+
+	    Tools.prototype.isObject = function( object ) {
+	      return object !== null && typeof object === 'object' && object.constructor == Object;
+	    };
+
+	    Tools.prototype.forOwn = function( object, callback ) {
+	      if ( !this.isObject( object ) ) {
+	        throw new TypeError('Expected \'object\', but received \'' + typeof object + '\'.');
+	      } else {
+	        for ( var property in object ) {
+	          if ( object.hasOwnProperty( property ) ) {
+	            callback( property );
+	          }
+	        }
+	      }
+	    };
+
+	    Tools.prototype.extend = function( target, source ) {
+	      this.forOwn( source, function( property ) {
+	        if ( this.isObject( source[ property ] ) ) {
+	          if ( !target[ property ] || !this.isObject( target[ property ] ) ) {
+	            target[ property ] = {};
+	          }
+	          this.extend( target[ property ], source[ property ] );
+	        } else {
+	          target[ property ] = source[ property ];
+	        }
+	      }.bind( this ));
+	      return target;
+	    };
+
+	    Tools.prototype.extendClone = function( target, source ) {
+	      return this.extend( this.extend( {}, target ), source );
+	    };
+
+	    Tools.prototype.isMobile = function() {
+	      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent );
+	    };
+
+	    Tools.prototype.isSupported = function( feature ) {
+	      var sensor    = document.createElement('sensor');
+	      var cssPrefix = 'Webkit,Moz,O,'.split(',');
+	      var tests     = ( feature + cssPrefix.join( feature + ',' ) ).split(',');
+
+	      for ( var i = 0; i < tests.length; i++ ) {
+	        if ( !sensor.style[ tests[ i ] ] === '' ) {
+	          return false;
+	        }
+	      }
+	      return true;
+	    };
+
+	    function Tools() {};
+	    return Tools;
+
+	  })();
+
+	  var _requestAnimationFrame = window.requestAnimationFrame       ||
+	                               window.webkitRequestAnimationFrame ||
+	                               window.mozRequestAnimationFrame;
+
+	}).call( this );
+
+	return this.ScrollReveal;
+
+	}));
+
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)))
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = "<!doctype html>\n<html lang=\"\">\n<head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"description\" content=\"Vicens Fayos Portfolio and showcase\">\n\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Vicens Fayos</title>\n\n    <!-- Disable tap highlight on IE -->\n    <meta name=\"msapplication-tap-highlight\" content=\"no\">\n\n    <!-- Web Application Manifest -->\n    <link rel=\"manifest\" href=\"manifest.json\">\n\n    <!-- Add to homescreen for Chrome on Android -->\n    <meta name=\"mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"application-name\" content=\"Vicens Fayos\">\n    <link rel=\"icon\" sizes=\"192x192\" href=\"images/touch/chrome-touch-icon-192x192.png\">\n\n    <!-- Add to homescreen for Safari on iOS -->\n    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n    <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"black\">\n    <meta name=\"apple-mobile-web-app-title\" content=\"Web Starter Kit\">\n    <link rel=\"apple-touch-icon\" href=\"images/touch/apple-touch-icon.png\">\n\n    <!-- Tile icon for Win8 (144x144 + tile color) -->\n    <meta name=\"msapplication-TileImage\" content=\"images/touch/ms-touch-icon-144x144-precomposed.png\">\n    <meta name=\"msapplication-TileColor\" content=\"#2F3BA2\">\n\n    <!-- Color the status bar on mobile devices -->\n    <meta name=\"theme-color\" content=\"#2F3BA2\">\n    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>\n</head>\n<body>\n<!-- Uses a header that scrolls with the text, rather than staying\nlocked at the top -->\n\n<section class=\"section\">\n    <div class=\"section__container section__container--green\">\n        <div class=\"section__wrapper\">\n            <div class=\"logo\" data-scroll-reveal=\"wait 1.0s and then enter top ease-in-out 20px\">\n                <div class=\"logo__wrapper\">\n                    <img src=\"images/cube.svg\" alt=\"duck\" class=\"logo__cube logo__cube--animated\">\n                    <img src=\"images/cube.svg\" alt=\"duck\" class=\"logo__cube\">\n                </div>\n            </div>\n            <h1 class=\"logo__text\">\n                <small>Hi, I am Vicens Fayos</small>\n                <strong>Web Developer Expert</strong>\n            </h1>\n        </div>\n        <a href=\"#\" class=\"more\">\n            <img src=\"images/arrow-bottom-drop-circle.svg\" alt=\"arrow bottom\" class=\"more__image more__image--animated\">\n        </a>\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--blue\">\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--green\">\n    </div>\n</section>\n<section class=\"section\">\n    <div class=\"section__container section__container--rosa\">\n    </div>\n</section>\n\n<script src=\"https://code.jquery.com/jquery-2.1.4.min.js\"></script>\n<!--<script src=\"https://code.createjs.com/preloadjs-0.6.2.min.js\"></script>-->\n<script src=\"js/main.bundle.js\"></script>\n\n<script>\n    (function (i, s, o, g, r, a, m) {\n        i['GoogleAnalyticsObject'] = r;\n        i[r] = i[r] || function () {\n                    (i[r].q = i[r].q || []).push(arguments)\n                }, i[r].l = 1 * new Date();\n        a = s.createElement(o),\n                m = s.getElementsByTagName(o)[0];\n        a.async = 1;\n        a.src = g;\n        m.parentNode.insertBefore(a, m)\n    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');\n    ga('create', 'UA-XXXXX-X', 'auto');\n    ga('send', 'pageview');\n</script>\n</body>\n</html>\n"
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(4);
+	var content = __webpack_require__(8);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(6)(content, {});
+	var update = __webpack_require__(10)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -198,21 +698,21 @@
 	}
 
 /***/ },
-/* 4 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(5)();
+	exports = module.exports = __webpack_require__(9)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "/* Palette templates paletton.com */\nhtml, body {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-family: 'Raleway', helvetica, arial, sans-serif; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: inherit;\n  padding: inherit; }\n\n.layout {\n  background-color: #FF8F5F;\n  /*  background:\n  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/ }\n\n.layout-container {\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGCQBOLnQAwGjDAGNgGwSgwVAE+2AgXahLM7AAAAAElFTkSuQmCC) repeat; }\n\n.text {\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%); }\n\n.section {\n  position: relative;\n  text-align: center;\n  height: 100%;\n  cursor: default;\n  pointer-events: none;\n  display: block; }\n  .section__container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block; }\n    .section__container--current {\n      position: fixed; }\n    .section__container--red {\n      background-color: #FF8F5F;\n      /*  background:\n  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/ }\n    .section__container--green {\n      background-color: #4DCE9A;\n      /*  background:\n  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/ }\n    .section__container--blue {\n      background-color: #597CCC;\n      /*  background:\n  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/ }\n    .section__container--rosa {\n      background-color: #EF5986;\n      /*  background:\n  linear-gradient(-360deg, $down 0%, $down 0.3%, $up 112%, transparent 11%);*/ }\n  .section__wrapper {\n    color: #FF5F5F;\n    text-align: center;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n    -moz-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    -o-transform: translate(-50%, -50%);\n    transform: translate(-50%, -50%); }\n\n.logo {\n  font-size: 4rem;\n  color: #FF5F5F; }\n  .logo--image {\n    width: 6rem;\n    display: block;\n    margin: 0 auto; }\n  .logo__header {\n    display: block;\n    color: white; }\n    .logo__header small {\n      display: block;\n      font-size: 2rem;\n      font-weight: 100; }\n    .logo__header strong {\n      display: block;\n      font-size: 4rem;\n      font-weight: 100; }\n\n.more {\n  width: 100%;\n  bottom: 4vh;\n  display: block;\n  position: absolute; }\n  .more .more__image {\n    width: 3rem; }\n\nsection {\n  text-align: center;\n  position: relative;\n  background: #fff;\n  z-index: 800;\n  height: 100%; }\n\n.content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 10vh 6vw; }\n", ""]);
+	exports.push([module.id, "/* Palette templates paletton.com */\nhtml, body {\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  -ms-box-sizing: border-box;\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n  height: 100%;\n  font-size: 16px;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n  font-family: 'Raleway', helvetica, arial, sans-serif; }\n\n*, *:before, *:after {\n  box-sizing: inherit;\n  margin: inherit;\n  padding: inherit; }\n\n.layout-container {\n  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGCQBOLnQAwGjDAGNgGwSgwVAE+2AgXahLM7AAAAAElFTkSuQmCC) repeat; }\n\n.text {\n  text-align: center;\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  -o-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%); }\n\n.section {\n  position: relative;\n  text-align: center;\n  height: 100%;\n  cursor: default;\n  pointer-events: none;\n  display: block; }\n  .section__container {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block; }\n    .section__container--current {\n      position: fixed; }\n    .section__container--red {\n      background-color: #FF8F5F;\n      background-color: #FF8F5F;\n      background-image: -webkit-linear-gradient(top, #FF8F5F 60%, transparent);\n      background-image: linear-gradient(to bottom,#FF8F5F 60%, transparent); }\n    .section__container--green {\n      background-color: #4DCE9A;\n      background-color: #4DCE9A;\n      background-image: -webkit-linear-gradient(top, #4DCE9A 60%, #eee);\n      background-image: linear-gradient(to bottom,#4DCE9A 60%, #eee); }\n    .section__container--blue {\n      background-color: #597CCC;\n      background-color: #597CCC;\n      background-image: -webkit-linear-gradient(top, #597CCC 60%, transparent);\n      background-image: linear-gradient(to bottom,#597CCC 60%, transparent); }\n    .section__container--rosa {\n      background-color: #EF5986;\n      background-color: #EF5986;\n      background-image: -webkit-linear-gradient(top, #EF5986 60%, transparent);\n      background-image: linear-gradient(to bottom,#EF5986 60%, transparent); }\n  .section__wrapper {\n    color: #FF5F5F;\n    text-align: center;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    -webkit-transform: translate(-50%, -50%);\n    -moz-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n    -o-transform: translate(-50%, -50%);\n    transform: translate(-50%, -50%); }\n\n.logo {\n  font-size: 4rem;\n  color: #FF5F5F;\n  margin-bottom: 4rem; }\n\n@keyframes cube_animation {\n  0% {\n    transform: scale(1, 1);\n    transform: translate(-50%, -50%);\n    opacity: 1; }\n  50% {\n    transform: translate(-50%, -50%) scale(1.3, 1.3);\n    opacity: .4; }\n  100% {\n    transform: translate(-50%, -50%) scale(1.5, 1.5);\n    opacity: 0; } }\n  .logo__wrapper {\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    display: block; }\n  .logo__cube {\n    width: 6rem;\n    display: block;\n    text-align: center;\n    position: absolute;\n    left: 50%;\n    transform: translate(-50%, -50%); }\n    .logo__cube--animated {\n      animation: cube_animation 2s ease-out infinite; }\n  .logo__text {\n    display: block;\n    color: white; }\n    .logo__text small {\n      display: block;\n      font-size: 2rem;\n      font-weight: 100; }\n    .logo__text strong {\n      display: block;\n      font-size: 4rem;\n      font-weight: bold; }\n\n.more {\n  width: 100%;\n  bottom: 4vh;\n  display: block;\n  position: absolute; }\n\n@keyframes more_animation {\n  0% {\n    opacity: 1; }\n  20% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, 6px, 0);\n    transform: translate3d(0, 6px, 0); }\n  21% {\n    opacity: 0;\n    -webkit-transform: translate3d(0, -10px, 0);\n    transform: translate3d(0, -10px, 0); }\n  41% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0); }\n  100% {\n    opacity: 1;\n    -webkit-transform: translate3d(0, 0, 0);\n    transform: translate3d(0, 0, 0); } }\n  .more__image {\n    width: 3rem; }\n    .more__image--animated {\n      animation: more_animation 3s linear infinite; }\n\nsection {\n  text-align: center;\n  position: relative;\n  background: #fff;\n  z-index: 800;\n  height: 100%; }\n\n.content {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  padding: 10vh 6vw; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 5 */
+/* 9 */
 /***/ function(module, exports) {
 
 	/*
@@ -268,7 +768,7 @@
 
 
 /***/ },
-/* 6 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -522,13 +1022,13 @@
 
 
 /***/ },
-/* 7 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(8);
+	module.exports = __webpack_require__(12);
 
 /***/ },
-/* 8 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!

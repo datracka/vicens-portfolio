@@ -45,7 +45,9 @@ module.exports = {
         new BowerWebpackPlugin(),
         new webpack.ProvidePlugin({
             $: "jquery",
-            jQuery: "jquery"
+            jQuery: "jquery",
+            ScrollReveal: "scrollreveal",
+            PreloadJS: "preloadjs"
         })
     ]
     /*externals: {
