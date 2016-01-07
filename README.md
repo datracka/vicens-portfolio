@@ -1,5 +1,7 @@
 /** 
 
+Vicensfayos.com portfolio - WIP
+
 installation
 
 $ npm install - install dev dependencies defined in package.json"

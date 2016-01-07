@@ -5,8 +5,10 @@ if (process.env.NODE_ENV === 'development') {
 //require('material-design-lite');
 require('../styles/main.scss');
 require('jquery');
-require("scrollreveal");
+var ScrollReveal = require("scrollreveal");
 
+//window.sr = ScrollReveal();
+//sr.reveal('.foo');
 
 //ambient background color http://codepen.io/somenumboola/pen/wAhCy
 //porfolio ideas:

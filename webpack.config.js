@@ -35,6 +35,7 @@ module.exports = {
             }
         ]
     },
+    devtool: 'source-map',
     plugins: [
         new BrowserSyncPlugin({
             host: 'localhost',
