@@ -1,0 +1,22 @@
+.i-love-it {
+  color: white;
+  font-weight: bolder;
+  font-size:1.5em;
+  text-transform: uppercase;
+
+  @media (min-width: $tablet) {
+    font-size: 6em;
+  }
+
+
+  &__text {
+    display: inline-block;
+  }
+
+  &__heart {
+    display: inline-block;
+    width: 1.4em;
+    vertical-align: text-bottom;
+  }
+
+}
