@@ -4,8 +4,11 @@
 
   &__container {
 
-    padding: $global_padding;
     @include container();
+
+    &--padding {
+      padding: $global_padding;
+    }
 
     &--current {
       position: fixed;
@@ -29,6 +32,10 @@
 
     &--lila {
       @include background-color($lila, $grayLighter);
+    }
+
+    &--red {
+      @include background-color($red, $grayLighter);
     }
 
   }

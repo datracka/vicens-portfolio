@@ -15,7 +15,7 @@
   display: block;
   color: white;
 
-  margin-top: 1em;
+  margin-top: 1.5em;
   //for not mobile  (tablet / laptops / screens) we center the content
   @media (min-width: $tablet) {
     margin-top: 3em;
@@ -33,6 +33,7 @@
     display: block;
     font-size: $big-font-size;
     font-weight: bold;
+    margin-top: 0.2em;
   }
 
   &&--justified {

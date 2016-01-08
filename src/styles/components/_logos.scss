@@ -3,9 +3,7 @@
 
   //for not mobile  (tablet / laptops / screens) we center the content
   margin-top: 1em;
-  @media (min-width: $tablet) {
-    font-size: $font-size * 3;
-  }
+
 
   @keyframes cube_animation {
     0% {
@@ -37,6 +35,11 @@
 
   &__cube {
     width: 6em;
+    margin-top: -2em;
+    @media (min-width: $tablet) {
+      margin-top: 0em;
+    }
+
     display: block;
 
     text-align: center;
@@ -50,47 +53,66 @@
 
   }
 
+  /* fix: a lot o code duplicated */
   &__html5 {
     width: 2em;
     display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
   }
 
   &__php {
     width: 2em;
     display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
   }
 
   &__css3 {
     width: 2em;
     display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
   }
 
   &__javascript {
     width: 2em;
     display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
   }
 
   &__wordpress {
     width: 2em;
     display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
   }
+  /* end refactor */
 
   &__at {
-    width: 2em;
+    width: 6em;
     display: block;
     margin: 0 auto;
+
   }
 
   &__linkedin {
-    width: 2em;
+    width: 6em;
     display: block;
     margin: 0 auto;
   }
 
   &__twitter {
-    width: 2em;
+    width: 6em;
     display: block;
     margin: 0 auto;
+
   }
 
 
