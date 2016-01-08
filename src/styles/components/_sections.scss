@@ -1,16 +1,18 @@
 .section {
   @include main-block();
+  font-size: $font-size;
 
   &__container {
 
+    padding: $global_padding;
     @include container();
 
     &--current {
       position: fixed;
     }
 
-    &--red {
-      @include background-color($orange, transparent);
+    &--orange {
+      @include background-color($orange, $grayLighter);
     }
 
     &--green {
@@ -18,22 +20,30 @@
     }
 
     &--blue{
-      @include background-color($ocean, transparent);
+      @include background-color($ocean, $grayLighter);
     }
 
     &--rosa {
-      @include background-color($rosa, transparent);
+      @include background-color($rosa, $grayLighter);
+    }
+
+    &--lila {
+      @include background-color($lila, $grayLighter);
     }
 
   }
 
   &__wrapper {
-    color: $red;
     text-align: center;
     position: absolute;
     left: 50%;
     top: 50%;
     @include transform(translate(-50%, -50%));
+  }
+
+  &__wrapper2 {
+    padding: 2em;
+    height: 100%;
   }
 
 }

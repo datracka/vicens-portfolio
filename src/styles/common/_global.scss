@@ -7,7 +7,7 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-size: 16px;
+  font-size: $font-size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Raleway', helvetica, arial, sans-serif;
@@ -15,8 +15,8 @@ html, body {
 
 *, *:before, *:after {
   box-sizing: inherit;
-  margin: inherit;
-  padding: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 @mixin background-color($up, $down) {
@@ -46,12 +46,3 @@ html, body {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAG0lEQVQIW2NkYGCQBOLnQAwGjDAGNgGwSgwVAE+2AgXahLM7AAAAAElFTkSuQmCC) repeat;
 }
 
-
-
-.text {
-  text-align: center;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  @include transform(translate(-50%, -50%));
-}

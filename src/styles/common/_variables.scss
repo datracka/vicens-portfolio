@@ -4,6 +4,12 @@ $icon-font-path:        "../fonts/";
 // Grid settings
 $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
+$font-size:  16px;
+$small-font-size: 4vh;
+$big-font-size: 8vh;
+$global_margin: 0;
+$global_padding: 4em;
+
 
 /* Palette templates paletton.com */
 
@@ -28,5 +34,4 @@ $greenFluor       : #53E053;
 $ocean            : #597CCC;
 $lila             : #765CCF;
 $rosa             : #EF5986;
-$red              : #FF5F5F;
 $orange           : #FF8F5F;

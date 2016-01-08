@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			exports: {},
 /******/ 			id: moduleId,
 /******/ 			loaded: false
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
 /******/ })
@@ -47,26 +47,26 @@
 	/*if (process.env.NODE_ENV === 'development') {
 	    require('../../app/index.html')
 	}
-
+	
 	var jQuery = require("bundle!jquery");
 	require('../styles/preloader.scss');
 	console.log(jQuery);
 	jQuery("#progress").txt("Hello World!");*/
-
+	
 	/*
 	var queue        = new preloadjs.LoadQueue(),
 	    $state       = $('#state'),
 	    $progress    = $('#progress'),
 	    $progressbar = $('#progressbar .bar');
-
-
+	
+	
 	queue.on('complete',     onComplete);
 	queue.on('error',        onError);
 	queue.on('fileload',     onFileLoad);
 	queue.on('fileprogress', onFileProgress);
 	queue.on('progress',     onProgress);
-
-
+	
+	
 	queue.loadManifest([
 	    {
 	        id:   '1',
@@ -85,32 +85,32 @@
 	        src:  'http://upload.wikimedia.org/wikipedia/commons/c/cb/WA_-_Dry_Falls_-_Huge_Channel_v1.png'
 	    }
 	]);
-
-
-
+	
+	
+	
 	function onComplete(event) {
 	    console.log('Complete', event);
 	    $state.text( $state.text() + '[All loaded]' );
 	    $progressbar.addClass('complete');
 	}
-
+	
 	function onError(event) {
 	    console.log('Error', event);
 	    $state.text( $state.text() + '[' + event.item.id + ' errored] ');
 	}
-
+	
 	function onFileLoad(event) {
 	    console.log('File loaded', event);
 	    $state.text( $state.text() + '[' + event.item.id + ' loaded] ');
 	}
-
+	
 	function onFileProgress(event) {
 	    console.log('File progress', event);
 	}
-
+	
 	function onProgress(event) {
 	    var progress = Math.round(event.loaded * 100);
-
+	
 	    console.log('General progress', Math.round(event.loaded) * 100, event);
 	    $progress.text(progress + '%');
 	    $progressbar.css({
@@ -121,3 +121,4 @@
 
 /***/ }
 /******/ ]);
+//# sourceMappingURL=preloader.bundle.js.map

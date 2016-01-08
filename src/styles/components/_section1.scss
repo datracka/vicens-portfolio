@@ -1,5 +1,12 @@
 
 .logo {
+  font-size: $font-size;
+
+  //for not mobile  (tablet / laptops / screens) we center the content
+  margin-top: 2em;
+  @media (min-width: 960px) {
+    margin-top: 6em;
+  }
 
   @keyframes cube_animation {
     0% {
@@ -17,9 +24,7 @@
     }
   }
 
-  font-size: 4rem;
-  color: $red;
-  margin-bottom: 4rem;
+  //margin-bottom: 4em; //fix should not be here.
 
   &__wrapper {
     position: absolute;
@@ -32,7 +37,7 @@
   }
 
   &__cube {
-    width: 6rem;
+    width: 6em;
     display: block;
 
     text-align: center;
@@ -46,33 +51,85 @@
 
   }
 
-  &__text {
-    display: block;
-    color: white;
-
-    small {
-      display: block;
-      font-size: 4vh;
-      font-weight: 100;
-    }
-
-    strong {
-      display: block;
-      font-size: 8vh;
-      font-weight: bold;
-    }
+  &__html5 {
+    width: 12vw;
+    display: inline-block;
   }
 
+  &__php {
+    width: 12vw;
+    display: inline-block;
+  }
+
+  &__css3 {
+    width: 12vw;
+    display: inline-block;
+  }
+
+  &__javascript {
+    width: 12vw;
+    display: inline-block;
+  }
+
+
+
+}
+
+.text {
+  display: block;
+  color: white;
+
+  margin-top: 1em;
+  //for not mobile  (tablet / laptops / screens) we center the content
+  @media (min-width: 960px) {
+    margin-top: 3em;
+    margin-left: 12em;
+    margin-right: 12em;
+  }
+
+  small {
+    display: block;
+    font-size: $small-font-size;
+    font-weight: 100;
+  }
+
+  strong {
+    display: block;
+    font-size: $big-font-size;
+    font-weight: bold;
+  }
+
+  &&--justified {
+    text-align: justify;
+  }
 }
 
 .more {
 
   @keyframes more_animation {
-    0% {opacity: 1;}
-    20% {opacity: 0;-webkit-transform: translate3d(0, 6px, 0);transform: translate3d(0, 6px, 0);}
-    21% {opacity: 0;-webkit-transform: translate3d(0, -10px, 0);transform: translate3d(0, -10px, 0);}
-    41% {opacity: 1;-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
-    100% {opacity: 1;-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
+    0% {
+      opacity: 1;
+    }
+    20% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 6px, 0);
+      transform: translate3d(0, 6px, 0);
+    }
+    21% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -10px, 0);
+      transform: translate3d(0, -10px, 0);
+    }
+    41% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   width: 100%;

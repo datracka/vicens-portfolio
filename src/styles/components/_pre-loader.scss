@@ -1,7 +1,6 @@
 .pre-loader {
   z-index: 1000;
   @include main-block();
-  @include background-color($blue, $red, $white, $blue);
 }
 
 .pre-loader__container {
