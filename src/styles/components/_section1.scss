@@ -3,9 +3,9 @@
   font-size: $font-size;
 
   //for not mobile  (tablet / laptops / screens) we center the content
-  margin-top: 2em;
-  @media (min-width: 960px) {
-    margin-top: 6em;
+  margin-top: 1em;
+  @media (min-width: $tablet) {
+    margin-top: 2em;
   }
 
   @keyframes cube_animation {
@@ -75,13 +75,24 @@
 
 }
 
+.title {
+  margin-top: 0.5em;
+  color: white;
+  font-weight: bold;
+
+  font-size: 1em;
+  @media (min-width: $tablet) {
+    font-size: 4em;
+  }
+}
+
 .text {
   display: block;
   color: white;
 
   margin-top: 1em;
   //for not mobile  (tablet / laptops / screens) we center the content
-  @media (min-width: 960px) {
+  @media (min-width: $tablet) {
     margin-top: 3em;
     margin-left: 12em;
     margin-right: 12em;
