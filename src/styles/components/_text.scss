@@ -36,9 +36,20 @@
     margin-top: 0.2em;
   }
 
-  &&--justified {
+  &--justified {
     text-align: justify;
   }
+
+  &--left {
+    text-align: left;
+  }
+
+    &__paragraph {
+
+      margin-bottom: 1em;
+
+    }
+
 }
 
 .more {
