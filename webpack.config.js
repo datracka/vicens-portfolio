@@ -40,19 +40,19 @@ module.exports = {
         new BrowserSyncPlugin({
             host: 'localhost',
             port: 3000,
-            proxy: 'http://localhost:3100/webpack-dev-server/app/', //BS act as a proxy for webpack-de-server
+            proxy: 'http://localhost:3100/app/', //BS act as a proxy for webpack-de-server
             //server: { baseDir: ['./app'] }
         }),
-        new BowerWebpackPlugin(),
+        //new BowerWebpackPlugin(), Bower deactivated - Client dependencies load externally.
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery",
-            ScrollReveal: "scrollreveal",
+            ScrollReveal: "scrollreveal", //it is load from NPM
             PreloadJS: "preloadjs"
         })
-    ]
-    /*externals: {
-          "bundle!jquery": "jQuery"
-    }*/
+    ],
+    externals: {
+          "jquery": "jQuery"
+    }
 }
 ;
