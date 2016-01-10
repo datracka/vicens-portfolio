@@ -2,8 +2,13 @@
   font-size: $font-size;
 
   //for not mobile  (tablet / laptops / screens) we center the content
-  margin-top: 1em;
 
+  &--margin-top {
+    margin-top: 1em;
+    @media (min-width: $tablet) {
+      margin-top: 2em;
+    }
+  }
 
   @keyframes cube_animation {
     0% {
@@ -96,20 +101,20 @@
   /* end refactor */
 
   &__at {
-    width: 6em;
+    width: 5em;
     display: block;
     margin: 0 auto;
 
   }
 
   &__linkedin {
-    width: 6em;
+    width: 5em;
     display: block;
     margin: 0 auto;
   }
 
   &__twitter {
-    width: 6em;
+    width: 5em;
     display: block;
     margin: 0 auto;
 

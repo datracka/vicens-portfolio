@@ -36,12 +36,24 @@
     margin-top: 0.2em;
   }
 
+  &__link {
+    text-decoration: underline;
+    color: white;
+  }
+
   &--justified {
     text-align: justify;
   }
 
   &--left {
     text-align: left;
+  }
+
+  &__make-it-invisible-mobile {
+
+    @media (max-width: $phone) {
+      display: none;
+    }
   }
 
     &__paragraph {
