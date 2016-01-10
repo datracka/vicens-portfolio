@@ -15,7 +15,6 @@ $ npm run build - Build assets in app folder
 
 # production & deployment
 
-#WIP
 
 
 
