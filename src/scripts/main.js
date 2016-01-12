@@ -24,7 +24,7 @@ $(window).load(function () {
 
     $(".logos--js-show").fadeIn(2000);
 
-    window.sr = ScrollReveal();
+    window.sr = ScrollReveal({mobile: true});
     sr.reveal('.scroll-reveal-text', {
         delay: 500,
         origin: 'top',
@@ -35,13 +35,13 @@ $(window).load(function () {
     });
 
     sr.reveal('.scroll-reveal-text2', {
-        delay: 600,
+        delay: 1000,
         origin: 'top',
-        distance: '30px',
+        distance: '20px',
         opacity: 0,
         easing: 'ease-in-out',
         scale: 0,
-        duracion: 1000,
+        duration: 1000,
     });
 
     sr.reveal('.scroll-reveal-love', {

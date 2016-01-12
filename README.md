@@ -17,24 +17,23 @@ $ npm run build - Build assets in app folder
 
 # pending 
 
-— more icons in development section!
-— Menu
-- link fancy effect. 
-- new font title / header
-- Color effects - animations
-- mobile landscape does not work
-- link fancy effect. 
-- Ipad portrait does not work
-- Startup section - github projects icon
-- Iphone icons - (Meta)
-- loader
-- separate css from Js
-- refactor Javascript
-- travis. continous integration
-- Fix bower dependencies
-- google anaylitcs
-- refactor CSS
-- move fonts to local
+* more icons in development section
+* Menu
+* link fancy effect. 
+* new font title / header
+* Color effects - animations
+* mobile landscape does not work
+* Ipad portrait does not work
+* Startup section - github projects icon
+* Iphone icons - (Meta)
+* loader
+* separate css from Js
+* refactor Javascript
+* travis. continous integration
+* Fix bower dependencies
+* google anaylitcs
+* refactor CSS
+* move fonts to local
 
 
 

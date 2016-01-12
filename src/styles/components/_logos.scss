@@ -62,71 +62,24 @@
 
   }
 
-  /* fix: a lot o code duplicated */
-  &__html5 {
-    width: 1em;
-    display: inline-block;
+  @mixin logo_size($mobile_size, $desktop_size) {
+    width: $mobile_size;
     @media (min-width: $tablet) {
-      width: 6em;
+      width: $desktop_size;
     }
   }
 
-  &__php {
-    width: 1em;
+  &__logo {
+    @include logo_size(2em, 5em);
     display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
+  }
+
+  &--mobile-invisible {
+    @media (max-width: $phone) {
+      display: none;
     }
   }
 
-  &__css3 {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-
-  &__javascript {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-
-  &__java {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-
-  &__ruby {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-
-  &__webpack {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-
-  &__wordpress {
-    width: 1em;
-    display: inline-block;
-    @media (min-width: $tablet) {
-      width: 6em;
-    }
-  }
-  /* end refactor */
 
   &__at {
     width: 5em;
