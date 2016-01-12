@@ -5,15 +5,12 @@ if (process.env.NODE_ENV === 'development') {
 //require('material-design-lite');
 require('../styles/main.scss');
 var $ = require('jquery');
-
 var ScrollReveal = require("scrollreveal");
-console.log(ScrollReveal);
 
-//window.sr = ScrollReveal();
-//sr.reveal('.foo');
 
 //ambient background color http://codepen.io/somenumboola/pen/wAhCy
 //porfolio ideas:
+//https://www.sequoiacap.com/
 
 //http://impreza4.us-themes.com/portfolio-cities/
 //idea transition over pages: http://themeforest.net/item/material-design-admin-with-angularjs/full_screen_preview/13582227
@@ -25,23 +22,76 @@ var $window = $(window);
 
 $(window).load(function () {
 
-    $(".section").each(function (index, section) {
+    $(".logos--js-show").fadeIn(2000);
 
-        var $section = $(section);
-        var sectionTop = $section.offset().top;
-        var sectionBottom = $section.offset().top + $section.height();
-        console.log("i: " + sectionTop + " " + sectionBottom);
-
+    window.sr = ScrollReveal();
+    sr.reveal('.scroll-reveal-text', {
+        delay: 500,
+        origin: 'top',
+        distance: '20px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0
     });
 
-    console.log("#######################################");
-    $window.on("scroll", function () {
+    sr.reveal('.scroll-reveal-text2', {
+        delay: 600,
+        origin: 'top',
+        distance: '30px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0,
+        duracion: 1000,
+    });
 
+    sr.reveal('.scroll-reveal-love', {
+        delay: 100,
+        duration: 1000,
+        origin: 'top',
+        distance: '30px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0
+    });
+
+    sr.reveal('.scroll-reveal-title', {
+        delay: 200,
+        duration: 1000,
+        origin: 'top',
+        distance: '30px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0
+    });
+
+    sr.reveal('.scroll-reveal-logos-top', {
+        delay: 100,
+        duration: 600,
+        origin: 'top',
+        distance: '10px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0
+    });
+
+    sr.reveal('.scroll-reveal-logos-down', {
+        delay: 400,
+        duration: 1000,
+        origin: 'top',
+        distance: '30px',
+        opacity: 0,
+        easing: 'ease-in-out',
+        scale: 0
+    });
+
+
+
+    $window.on("scroll", function () {
 
         $(".section").each(function (index, section) {
 
             var $section = $(section);
-            var $section_container = $section.find( "div:first" );
+            var $section_container = $section.find("div:first");
             var sectionTop = $section.offset().top;
             var sectionBottom = $section.offset().top + $section.height();
 
