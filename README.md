@@ -17,7 +17,6 @@ $ npm run build - Build assets in app folder
 
 # pending 
 
-* more icons in development section
 * Menu
 * link fancy effect. 
 * new font title / header
