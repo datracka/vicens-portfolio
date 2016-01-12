@@ -64,7 +64,7 @@
 
   /* fix: a lot o code duplicated */
   &__html5 {
-    width: 2em;
+    width: 1em;
     display: inline-block;
     @media (min-width: $tablet) {
       width: 6em;
@@ -72,7 +72,7 @@
   }
 
   &__php {
-    width: 2em;
+    width: 1em;
     display: inline-block;
     @media (min-width: $tablet) {
       width: 6em;
@@ -80,7 +80,7 @@
   }
 
   &__css3 {
-    width: 2em;
+    width: 1em;
     display: inline-block;
     @media (min-width: $tablet) {
       width: 6em;
@@ -88,7 +88,31 @@
   }
 
   &__javascript {
-    width: 2em;
+    width: 1em;
+    display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
+  }
+
+  &__java {
+    width: 1em;
+    display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
+  }
+
+  &__ruby {
+    width: 1em;
+    display: inline-block;
+    @media (min-width: $tablet) {
+      width: 6em;
+    }
+  }
+
+  &__webpack {
+    width: 1em;
     display: inline-block;
     @media (min-width: $tablet) {
       width: 6em;
@@ -96,7 +120,7 @@
   }
 
   &__wordpress {
-    width: 2em;
+    width: 1em;
     display: inline-block;
     @media (min-width: $tablet) {
       width: 6em;
