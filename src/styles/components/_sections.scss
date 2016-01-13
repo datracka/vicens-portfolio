@@ -2,6 +2,41 @@
   @include main-block();
   font-size: $font-size;
 
+  //only hided when phone in landscape mode.
+  &--mobile-landscape-invisible {
+    @media (min-width: $phone) {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+    @media (min-width: $tablet) {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  //only showed when phone in landscape mode
+  &--mobile-landscape-visible {
+
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    @media (min-width: $phone) {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media (min-width: $tablet) {
+      display: none;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+  }
+
   &__container {
 
     @include container();
