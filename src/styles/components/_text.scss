@@ -18,10 +18,14 @@
 
   margin-top: 1.5em;
   //for not mobile  (tablet / laptops / screens) we center the content
+
   @media (min-width: $tablet) {
     margin-top: 3em;
-    margin-left: 12em;
-    margin-right: 12em;
+  }
+
+  @media (min-width: $desktop) {
+    margin-left: 4em;
+    margin-right: 4em;
   }
 
   small {
@@ -44,6 +48,10 @@
 
   &--justified {
     text-align: justify;
+  }
+
+  &--centered {
+    text-align: center;
   }
 
   &--left {

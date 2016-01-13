@@ -29,7 +29,6 @@ $(window).load(function () {
         delay: 500,
         origin: 'top',
         distance: '20px',
-        opacity: 0,
         easing: 'ease-in-out',
         scale: 0
     });
@@ -38,7 +37,6 @@ $(window).load(function () {
         delay: 1000,
         origin: 'top',
         distance: '20px',
-        opacity: 0,
         easing: 'ease-in-out',
         scale: 0,
         duration: 1000,
