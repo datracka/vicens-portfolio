@@ -17,20 +17,23 @@ $ npm run build - Build assets in app folder
 
 # pending 
 
+## UI / UX improvements
+
+* Startup section - github projects icon
 * Menu
 * link fancy effect. 
 * new font title / header
 * Color effects - animations
-* mobile landscape does not work
-* Ipad portrait does not work
-* Startup section - github projects icon
 * Iphone icons - (Meta)
+
+## technical improvements / nice to have
+
 * loader
 * separate css from Js
 * refactor Javascript
 * travis. continous integration
 * Fix bower dependencies
-* google anaylitcs
+* google analytics
 * refactor CSS
 * move fonts to local
 
