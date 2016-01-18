@@ -1,0 +1,29 @@
+.layout-sidebar {
+
+  &__content-right {
+    text-align: center;
+    margin-top: 2em;
+  }
+
+  @media (min-width: $desktop) {
+    &__content-left {
+      float: left;
+      width: 50%;
+      padding-right: 2rem
+    }
+
+    &__content-right {
+      margin-top: 0;
+      float: left;
+      width: 50%;
+      padding-left: 2rem;
+    }
+  }
+
+  &--make-it-invisible-mobile {
+    @media (max-width: $phone) {
+      display: none;
+      visibility: hidden;
+    }
+  }
+}

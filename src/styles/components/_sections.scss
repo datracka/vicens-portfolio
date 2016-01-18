@@ -73,6 +73,10 @@
       @include background-color($red, $grayLighter);
     }
 
+    &--yellow {
+      @include background-color($yellow, $grayLighter);
+    }
+
   }
 
   &__wrapper {

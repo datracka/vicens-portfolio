@@ -1,0 +1,12 @@
+.i-frame {
+
+  width: 401px;
+  height: 215px;
+
+  @media (min-width: $desktop) {
+    width: 560px;
+    height: 315px;
+
+  }
+
+}
