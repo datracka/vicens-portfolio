@@ -3,10 +3,9 @@
   width: 401px;
   height: 215px;
 
-  @media (min-width: $desktop) {
-    width: 560px;
-    height: 315px;
-
+  @media (min-width: $large-devices) {
+    width: 507px;
+    height: 275px;
   }
 
 }

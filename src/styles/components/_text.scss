@@ -15,7 +15,7 @@
   display: block;
   color: white;
   visibility: hidden;
-
+  font-size: 1em;
   margin-top: 1.5em;
   //for not mobile  (tablet / laptops / screens) we center the content
 
@@ -26,6 +26,11 @@
   @media (min-width: $desktop) {
     margin-left: 4em;
     margin-right: 4em;
+
+  }
+
+  @media (min-width: $large-devices) {
+    font-size: 1.3em;
   }
 
   small {
