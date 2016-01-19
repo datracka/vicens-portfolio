@@ -19,7 +19,6 @@ $ npm run build - Build assets in app folder
 
 ## UI / UX improvements
 
-* Startup section - github projects icon
 * Menu
 * link fancy effect. 
 * new font title / header
