@@ -10,7 +10,7 @@ var path = require("path");
 var webpack = require("webpack");
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-// var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
+
 console.log(path.join(__dirname, "js"));
 // webpack.config.js
 module.exports = {
@@ -26,12 +26,22 @@ module.exports = {
     filename: "[name].bundle.js"
   },
   module: {
-    loaders: [
-      { test: /\.scss$/, loader: "style-loader!css-loader!sass-loader" },
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [{ loader: "style-loader" }, { loader: "css-loader" }]
+      },
       {
         test: /\.html$/,
-        loader: "raw-loader"
+        loader: ["raw-loader"]
       }
     ]
   },
