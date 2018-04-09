@@ -86,7 +86,6 @@ $(window).load(function() {
       var sectionTop = $section.offset().top;
       var sectionBottom = $section.offset().top + $section.height();
 
-      console.log($window.scrollTop());
       if (
         $window.scrollTop() >= sectionTop &&
         $window.scrollTop() < sectionBottom

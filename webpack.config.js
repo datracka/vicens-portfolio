@@ -1,27 +1,15 @@
-/* pending
-
- - manage css external dependencies (mdl)
- - manage js external dependencies
- - add jshint / eslint linting
- - create a distribution
- */
-
 var path = require("path");
 var webpack = require("webpack");
 var BowerWebpackPlugin = require("bower-webpack-plugin");
 var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
-console.log(path.join(__dirname, "js"));
 // webpack.config.js
 module.exports = {
-  //entry: './src/scripts/main.js',
-  //https://webpack.github.io/docs/multiple-entry-points.html
+  mode: "production",
   entry: {
-    main: "./src/scripts/main.js", //main app entry point
-    preloader: "./src/scripts/pre-loader.js" //preloader entry point
+    main: "./src/scripts/main.js"
   },
   output: {
-    //filename: './app/js/bundle.js'
     path: path.join(__dirname, "app/js"),
     filename: "[name].bundle.js"
   },
@@ -50,14 +38,12 @@ module.exports = {
     new BrowserSyncPlugin({
       host: "localhost",
       port: 3000,
-      proxy: "http://localhost:3100/app/" //BS act as a proxy for webpack-de-server
-      //server: { baseDir: ['./app'] }
+      proxy: "http://localhost:3100/app/"
     }),
-    //new BowerWebpackPlugin(), Bower deactivated - Client dependencies load externally.
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      ScrollReveal: "scrollreveal", //it is load from NPM
+      ScrollReveal: "scrollreveal", // it is loaded from NPM
       PreloadJS: "preloadjs"
     })
   ],

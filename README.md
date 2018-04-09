@@ -2,30 +2,29 @@
 
 http://vicensfayos.com
 
-# installation
+## installation
 
-* $ yarn - install dev dependencies defined in package.json"
+* $ yarn
+* $ npx bower install
 * $ bundle install - install ruby gems (bourbon)
 * $ cd src/styles && bourbon install - create a bourbon folder with useful functions.
 
-# development
+## development
 
 $ yarn build - Build assets in app folder
-§ yarn dev - run webpack-dev-server & browser-sync 
+§ yarn dev - run webpack-dev-server & browser-sync
 
-# production & deployment
+### TODO:
 
-# pending 
-
-## UI / UX improvements
+#### UI / UX improvements
 
 * Menu
-* link fancy effect. 
+* link fancy effect.
 * new font title / header
 * Color effects - animations
 * Iphone icons - (Meta)
 
-## technical improvements / nice to have
+#### technical improvements / nice to have
 
 * loader
 * separate css from Js
@@ -35,9 +34,3 @@ $ yarn build - Build assets in app folder
 * google analytics
 * refactor CSS
 * move fonts to local
-
-
-
-
-
-
