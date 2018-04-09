@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/vicensfayos/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js renmove css-loader
+  /Users/vicensfayos/.nvm/versions/node/v9.4.0/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start
 
 PATH: 
-  /Users/vicensfayos/.rvm/gems/ruby-2.4.1/bin:/Users/vicensfayos/.rvm/gems/ruby-2.4.1@global/bin:/Users/vicensfayos/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vicensfayos/.rvm/gems/ruby-2.4.1/bin:/Users/vicensfayos/.rvm/gems/ruby-2.4.1@global/bin:/Users/vicensfayos/.rvm/rubies/ruby-2.4.1/bin:/Users/vicensfayos/.nvm/versions/node/v9.4.0/bin:/Users/vicensfayos/.rvm/bin:/Users/vicensfayos/.rvm/bin
+  /Users/vicensfayos/.rvm/gems/ruby-2.4.1/bin:/Users/vicensfayos/.rvm/gems/ruby-2.4.1@global/bin:/Users/vicensfayos/.rvm/rubies/ruby-2.4.1/bin:/Users/vicensfayos/.nvm/versions/node/v9.4.0/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vicensfayos/.rvm/bin
 
 Yarn version: 
   1.5.1
@@ -44,6 +44,7 @@ npm manifest:
       "run-sequence": "^2.2.1",
       "sass-loader": "^6.0.7",
       "scrollreveal": "^3.0.6",
+      "style-loader": "^0.20.3",
       "webpack": "^4.2.0",
       "webpack-cli": "^2.0.13",
       "webpack-dev-server": "^3.1.1",
@@ -1412,8 +1413,8 @@ Lockfile:
       lodash.uniq "^4.5.0"
   
   caniuse-db@^1.0.30000529, caniuse-db@^1.0.30000634, caniuse-db@^1.0.30000639:
-    version "1.0.30000819"
-    resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000819.tgz#c3b7dd559e5e6d63d5dcaa62bac6bd04c7619709"
+    version "1.0.30000820"
+    resolved "https://registry.yarnpkg.com/caniuse-db/-/caniuse-db-1.0.30000820.tgz#7c20e25cea1768b261b724f82e3a6a253aaa1468"
   
   caseless@~0.11.0:
     version "0.11.0"
@@ -6729,6 +6730,13 @@ Lockfile:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   
+  style-loader@^0.20.3:
+    version "0.20.3"
+    resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.20.3.tgz#ebef06b89dec491bcb1fdb3452e913a6fd1c10c4"
+    dependencies:
+      loader-utils "^1.1.0"
+      schema-utils "^0.4.5"
+  
   supports-color@^2.0.0:
     version "2.0.0"
     resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
@@ -7647,7 +7655,7 @@ Lockfile:
       yeoman-environment "^2.0.5"
 
 Trace: 
-  Error: Command "renmove" not found.
+  Error: Command "start" not found.
       at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
       at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:87307:17
       at Generator.next (<anonymous>)

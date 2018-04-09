@@ -1,21 +1,11 @@
 {
   "name": "vicens-portfolio",
   "version": "0.0.0",
-  "authors": [
-    "Vicens Fayos <datracka@gmail.com>"
-  ],
+  "authors": ["Vicens Fayos <datracka@gmail.com>"],
   "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-  },
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
+  "dependencies": {},
   "devDependencies": {
-    "material-design-lite": "~1.0.6",
     "preloadjs": "*",
     "jquery": "~2.1.4"
   }
